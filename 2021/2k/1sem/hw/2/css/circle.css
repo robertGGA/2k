@@ -1,0 +1,214 @@
+.black_div {
+    background-color: black;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border:1px solid gray;
+
+}
+
+.white_div {
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    z-index: 1;
+    border:1px solid gray;
+    top: 30px;
+    left: 30px;
+}
+
+.modal_window {
+    background-color: #0093d5;
+    position: absolute;
+    top: 300px;
+    width: 400px;
+}
+
+.modal_header {
+    display: flex;
+    border-bottom: 1px solid white;
+    font-size: 21px;
+    color: white;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.password_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.email_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.pass_inputs {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+}
+
+.modal_body {
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+.button_settings {
+    display: flex;
+    justify-items: center;
+    background-color: #ffde6f;
+    color: black;
+    border: 0px;
+    height: 25px;
+}
+
+.button_wrapper {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.sss {
+    padding-top: 5px;
+}
+
+.circle1 {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background: #84cf84;
+    background: conic-gradient(from 135deg, #83ce85 75%, #cbe7b7 25%);
+}
+
+#circle2 {
+    position: relative;
+    left: 15px;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background: #eaf5e1;
+    align-self: center;
+    justify-content: center;
+}
+.circle_wrapper {
+    position: absolute;
+    left: 300px;
+}
+
+.circle_text {
+    display: flex;
+    align-self: center;
+    font-size: 25px;
+}
+
+.icons_wrapper {
+    position: absolute;
+    top: 800px;
+}
+
+.circle:hover {
+    filter: hue-rotate(360deg);
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.circle {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background: url("../res/zBi8jVJyVDw.jpeg") no-repeat;
+    background-size: 100px;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+.background_pig {
+    background: url("../res/P6mVDJ5PWsY.jpeg") no-repeat;
+    background-size: 100px;
+}
+
+.background_kotik {
+    background: url("../res/anotherkotik.jpeg"), no-repeat;
+    background-size: 150px;
+}
+
+.button_circle {
+    display: flex;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background: url("../res/VK.com-logo.svg") no-repeat;
+    background-size: 20px;
+    border: none;
+    fill: gray;
+}
+
+.twitter {
+    background: url("../res/twitter.svg");
+}
+.facebook {
+    background: url("../res/facebook_icon-icons.com_59205.svg");
+}
+
+.mail {
+    background: url("../res/email.svg");
+}
+
+.str {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.first_button_wrapper {
+    position: relative;
+    left: 10px;
+}
+
+.second_button {
+    position: relative;
+    display: flex;
+
+}
+
+.second_button_wrapper {
+    position: relative;
+    right: 4px;
+    bottom: 2px;
+}
+
+.third_button_wrapper {
+    position: relative;
+    right: 8px;
+}
+
+.fourth_button_wrapper {
+    position: relative;
+    left: 40px;
+    top: 10px;
+}
+
+.button_circle:hover {
+    filter: hue-rotate(59deg);
+}
