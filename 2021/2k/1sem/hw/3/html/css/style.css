@@ -31,6 +31,10 @@
     padding: 0;
 }
 
+html {
+    font-family: BlinkMacSystemFont,Arial,sans-serif;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -94,6 +98,7 @@ a {
     background-color: #303b44;
     font-size: 12px;
     padding: 6px 8px;
+    letter-spacing: 1px;
 }
 
 .right_side_header {
@@ -254,7 +259,9 @@ a {
 
 .content_first_block {
     display: flex;
-    padding: 20px 16px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 16px;
     flex-direction: column;
 }
 
@@ -294,7 +301,11 @@ a {
 }
 
 .heading_of_title {
-    font-size: 20px;
+    font-size: 30px;
+    font-family: Fira Sans,sans-serif;
+    color: #333;
+    font-weight: inherit;
+    line-height: 1.3;
 }
 
 .second_header_block {
@@ -313,7 +324,6 @@ a {
     margin: 8px 8px 0px 0px;
     padding: 0 4px;
     color: #6667a3;
-    font-size: .75rem;
     line-height: 1.5rem;
     border: 1px solid #6667a3;
     width: 55px;
@@ -327,7 +337,8 @@ a {
 }
 
 .description_div_font {
-    size: 16px;
+    font-size: 1rem;
+    line-height: 23px;
 }
 
 .description_button {
@@ -386,7 +397,6 @@ a {
     text-transform: uppercase;
     font-weight: 400;
     color: #505c66;
-    font-family: Fira Sans,sans-serif;
     font-size: 8px;
 }
 
@@ -471,7 +481,7 @@ a {
     text-transform: uppercase;
     font-weight: 500;
     color: #505c66;
-    font-family: Fira Sans,sans-serif;
+
 }
 
 .news_main {
@@ -488,7 +498,6 @@ a {
 }
 
 .name_of_news {
-    font-family: Fira Sans,sans-serif;
     color: #333;
     font-size: 1.0625rem;
     font-weight: 500;
@@ -530,6 +539,7 @@ a {
     background-color: white;
     margin-top: 12px;
     flex-direction: column;
+    margin-bottom: 10px
 }
 
 .content_of_reading {
@@ -543,11 +553,11 @@ a {
     align-self: center;
     flex-direction: column;
     padding: 24px 20px;
+
 }
 
 .header_extra {
     -webkit-font-smoothing: antialiased;
-    font-family: Fira Sans,sans-serif;
     color: #333;
     font-size: .875rem;
     line-height: 1.3125rem;
@@ -630,8 +640,35 @@ a {
 .row-list {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     width: 100%;
     display: flex;
-    padding: 0 24px;
+    padding: 10px 24px;
+    align-items: center;
+}
+
+.footer_elements {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_element {
+    display: flex;
+    padding-right: 30px;
+}
+
+.footer_element_link {
+    color: #50b5e7;
+    font-family: BlinkMacSystemFont,Arial,sans-serif;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+}
+
+.footer_element:last-child {
+    padding-right: 0;
+}
+
+.footer_other_res {
+    margin-right: 10px;
 }
 
