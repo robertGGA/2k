@@ -1,0 +1,15 @@
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.deps.json
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.runtimeconfig.json
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.runtimeconfig.dev.json
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.dll
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/bin/Debug/net5.0/ref/ConsoleApp1.dll
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.pdb
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.csproj.AssemblyReference.cache
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.AssemblyInfoInputs.cache
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.AssemblyInfo.cs
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.csproj.CoreCompileInputs.cache
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.dll
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/obj/Debug/net5.0/ref/ConsoleApp1.dll
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.pdb
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/5/ConsoleApp1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.genruntimeconfig.cache
