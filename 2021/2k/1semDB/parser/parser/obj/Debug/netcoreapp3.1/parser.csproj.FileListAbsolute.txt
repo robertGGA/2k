@@ -1,0 +1,12 @@
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/bin/Debug/netcoreapp3.1/parser.deps.json
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/bin/Debug/netcoreapp3.1/parser.runtimeconfig.json
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/bin/Debug/netcoreapp3.1/parser.runtimeconfig.dev.json
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/bin/Debug/netcoreapp3.1/parser.dll
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/bin/Debug/netcoreapp3.1/parser.pdb
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/obj/Debug/netcoreapp3.1/parser.csprojAssemblyReference.cache
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/obj/Debug/netcoreapp3.1/parser.AssemblyInfoInputs.cache
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/obj/Debug/netcoreapp3.1/parser.AssemblyInfo.cs
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/obj/Debug/netcoreapp3.1/parser.csproj.CoreCompileInputs.cache
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/obj/Debug/netcoreapp3.1/parser.dll
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/obj/Debug/netcoreapp3.1/parser.pdb
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1semDB/parser/parser/obj/Debug/netcoreapp3.1/parser.genruntimeconfig.cache
