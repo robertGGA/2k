@@ -30,34 +30,52 @@ namespace selfHostedHttp
 				HttpListenerRequest request = context.Request;
 				HttpListenerResponse response = context.Response;
 				String responseString = "";
-				switch (request.RawUrl.ToString()) 
+				byte[] buffer = Array.Empty<byte>();
+				String mime = "";
+
+				switch (request.RawUrl)
 				{
-					case "/hi.html":
-						responseString = new WelcomePage().CreatePage();
+					case "/hi":
+						buffer = new WelcomePage().CreatePage();
+						context.Response.ContentType = "text/html";
+						response.ContentType = "text/HTML";
 						Console.WriteLine("HiPage");
 						break;
-					case "/about.html":
-						responseString = new AboutPage().CreateAboutPage();
-						Console.WriteLine("AboutPage");
+					case "/about":
+						buffer = new AboutPage().CreateAboutPage();
+						Console.WriteLine(context.Response.ContentType);
+						response.ContentType = "text/HTML";
 						break;
-					case "/photos.html":
-						responseString = new PhotosPage().CreatePhotosPage();
+					case "/photos":
+						buffer = new PhotosPage().CreatePhotosPage();
+						context.Response.ContentType = "text/html";
 						break;
-					case "/contacts.html":
-						responseString = new ContactsPage().CreateContactsPage();
+					case "/contacts":
+						buffer = new ContactsPage().CreateContactsPage();
+						context.Response.ContentType = "text/html";
 						break;
-					case "/whyitis.html":
-						responseString = new WhyItisPage().CreateWhyItisPage();
+					case "/whyitis":
+						buffer = new WhyItisPage().CreateWhyItisPage();
+						context.Response.ContentType = "text/html";
 						break;
 					default:
-						responseString = "<html><head><meta charset='utf8'></head><body>Страница не найдена</body></html>";
+						if (request.RawUrl.ToLower().Contains(".css")) {
+							Console.WriteLine("css");
+							context.Response.ContentType = "text/html";
+						}
 						break;
 				}
+
 				Console.WriteLine("connected");
 
-				Console.WriteLine(request.RawUrl);
+				Console.WriteLine(request.Url);
 				
-				byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+				// byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+				Console.WriteLine("URL: {0}", context.Request.Url.OriginalString);
+				Console.WriteLine("Raw URL: {0}", context.Request.RawUrl);
+				//byte[] buffer = File.ReadAllBytes("." + context.Request.RawUrl.Replace("%20", " "));
+				//byte[] buffer = new WelcomePage().CreatePage();
+				
 				response.ContentLength64 = buffer.Length;
 				Stream output = response.OutputStream;
 				output.Write(buffer, 0, buffer.Length);

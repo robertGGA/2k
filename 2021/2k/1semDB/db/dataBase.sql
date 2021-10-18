@@ -36,7 +36,8 @@ CREATE TABLE IF NOT EXISTS students (
 	second_name VARCHAR(50) NOT NULL,
 	patronimyc VARCHAR(30),
 	passport_ser VARCHAR(10) UNIQUE NOT NULL,
-	passport_no VARCHAR(10) UNIQUE NOT NULL
+	passport_no VARCHAR(10) UNIQUE NOT NULL,
+	UNIQUE (passport_ser, passport_no)
 );
 
 CREATE TABLE IF NOT EXISTS additionalCourses(
@@ -64,7 +65,11 @@ CREATE TABLE IF NOT EXISTS additionalDormitoryPoints(
 	points INTEGER NOT NULL
 );
 
-create type PASSED_STATE as enum ('0', '1');
+DO $$ BEGIN
+CREATE TYPE PASSED_STATE AS ENUM ('0', '1');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
 
 CREATE TABLE IF NOT EXISTS discplineResults(
 	disciplineResults_id SERIAL PRIMARY KEY,
@@ -88,8 +93,19 @@ CREATE TABLE IF NOT EXISTS dormitories(
 	address VARCHAR(40) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS dormitory(
-	
+CREATE TABLE IF NOT EXISTS dormitoryPlaces(
+	dromPlaces_id SERIAL PRIMARY KEY,
+	dormitory_id INTEGER NOT NULL,
+	FOREIGN KEY (dormitory_id) REFERENCES dormitories(dormitory_id),
+	year DATE
+);
+
+CREATE TABLE IF NOT EXISTS teacher(
+	teacher_id SERIAL PRIMARY KEY,
+	disciplines_id INTEGER NOT NULL,
+	faculty_id INTEGER NOT NULL,
+	FOREIGN KEY (disciplines_id) REFERENCES disciplines(discipline_id),
+	FOREIGN KEY (faculty_id) REFERENCES faculties(faculty_id)
 );
 
 
