@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 a {
     text-decoration: none;
     color: black;
@@ -65,22 +66,18 @@ a:hover {
     margin: 0 auto;
 }
 
-.aboutMe_block {
+h2 {
+    text-align: center;
+}
+
+.content_row {
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
 }
 
-.image_settings {
-    height: 350px;
-    width: 300px;
-}
-
-.information {
-    margin-left: 50px;
-}
-
-.description_of_me {
-    font-size: 19px;
+.firstblock_info {
+    padding-left: 30px;
 }
 
 .footer {

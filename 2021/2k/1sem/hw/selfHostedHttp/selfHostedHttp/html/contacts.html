@@ -3,67 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="contacts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body style="padding: 0; margin: 0; border: 0; background-color: aliceblue;">
-    <header style="display:flex; background-color:cornflowerblue ; font-size: 30px; justify-content: center;">
-        <h3 style="font-family: Future,sans-serif">
-            Контакты
-        </h3>
-    </header>
-    <main style="display: flex; background-color: aliceblue; height: 100%; flex-direction: column; padding-left: 8%; padding-right: 8%; padding-top: 3%">
-        <table style="font-size: 25px">
-            <tr style="padding-top: 3%">
-                <td>
-                    <div style="padding-top: 3%">
-                        Telegram: @rabirdtapir
-                    </div>
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <div style="padding-top: 3%"> 
-                        VK: <a>vk.com/rabird</a>
-                    </div>
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <div style="padding-top: 3%">
-                        Телефон: +4032140239842034927523
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </main>
-    <footer>
-        <div style="margin-top: 25%; display: flex; flex-direction: row; justify-content: space-around">
-            <div style="border-bottom: 3px #111111; padding-bottom: 6px">
-                <a href="/about" style="font-size: 25px;">
-                    Про меня
-                </a>
-            </div>
+<body>
+<header class="header">
+    <div class="header_wrapper">
+        <div class="title_wrapper">
+            <h1>
+                Контакты
+            </h1>
+            <ul class="ul_list">
+                <li>
+                    <a href="/about">Про меня</a>
+                </li>
+                <li>
+                    <a href="/photos">Фотографии</a>
+                </li>
+                <li>
+                    <a href="/whyitis">Почему ИТИС?</a>
+                </li>
 
-            <div style="border-bottom: 3px #111111; padding-bottom: 6px">
-                <a href="/photos" style="font-size: 25px;">
-                    Фотографии
-                </a>
-            </div>
-
-            <div style="border-bottom: 3px #111111; padding-bottom: 6px">
-                <a href="/hi" style="font-size: 25px;">
-                    Главная
-                </a>
-            </div>
-
-            <div style="border-bottom: 3px #111111; padding-bottom: 6px">
-                <a href="/whyitis" style="font-size: 25px;">
-                    Почему ИТИС?
-                </a>
-            </div>
-
+                <li>
+                    <a href="/welcome">Главная страница</a>
+                </li>
+            </ul>
         </div>
-    </footer>
+    </div>
+</header>
+    <main class="main">
+        <div class="main_wrapper">
+            <table>
+                <tr>
+                    <td>
+                        Telegram: @rabirdtapir
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        VK: vk.com/rabird
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        Номер: +7423944324234
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+   
 </body>
 </html>

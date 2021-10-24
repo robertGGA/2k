@@ -13,6 +13,7 @@ body {
     font-family: "Roboto", serif;
     background-color: 	rgb(240,240,240);
 }
+
 .header {
     background-color: lightskyblue;
 }
@@ -59,10 +60,12 @@ a:hover {
 }
 
 .main_wrapper {
+    display: flex;
     padding-top: 30px;
     padding-bottom: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: space-between;
 }
 
 .aboutMe_block {

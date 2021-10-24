@@ -3,45 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>About me</title>
-    <link type="text/css" rel="stylesheet" href="/css/about.css">
+    <link type="text/css" rel="stylesheet" href="about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body style="padding: 0; margin: 0; border: 0; background-color: aliceblue;">
-    <header style="margin: 0 auto;" class="bebra">
-            <h1 style="margin: 0; text-align: center; font-family: SansSerif,serif; font-size: 3.2em; padding-top: 15px; padding-bottom: 15px">
-                About me
-            </h1>
+<body>
+    <header class="header">
+        <div class="header_wrapper">
+            <div class="title_wrapper">
+                <h1>
+                    Про меня
+                </h1>
+                    <ul class="ul_list">
+                        <li>
+                            <a href="/contacts">Контакты</a>
+                        </li>
+                        <li>
+                            <a href="/photos">Фотографии</a>
+                        </li>
+                        <li>
+                            <a href="/whyitis">Почему ИТИС?</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/welcome">Главная страница</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
     </header>
-
-    <main style="display: flex; background-color: aliceblue; height: 100%; width: 70%; flex-direction: column; padding-left: 8%; padding-right: 8%; padding-top: 3%">
+    
+    <main class="main">
+        <div class="main_wrapper">
+            <div class="aboutMe_block">
+                <img class="image_settings" src="aboutImg.png"/>
+            
+                <div class="information">
+                    <h2>Обо мне</h2>
+                    
+                    <span class="description_of_me">
+                        Меня зовут Кира Йошикаге. Мне 33 года. Мой дом находится в северо-восточной части Морио, где расположены все виллы. Я не женат. Я работаю в универмаге Kame Yu и прихожу домой не позднее 8 вечера. Я не курю, но иногда выпиваю. Я ложусь спать в 11 вечера, и убеждаюсь, что я получаю ровно восемь часов сна, несмотря ни на что. Выпив стакан теплого молока и потянувшись минут двадцать перед сном, я обычно без проблем сплю до утра. Словно ребёнок я просыпаюсь утром без всякой усталости и стресса. На моём последнем осмотре мне сказали, что у меня нет никаких проблем со здоровьем. Я пытаюсь донести, что я обычный человек, который хочет жить спокойной жизнью. Я забочусь о том, чтобы не утруждать себя какими-либо врагами – победами и поражениями, которые могли бы потревожить мой сон. Вот как я отношусь к обществу, и я знаю, что это приносит мне счастье. Хотя, если бы мне пришлось сражаться, я бы никому не проиграл.
+                    </span>
+                </div>
+            </div>
+        </div>
     </main>
     
-    <footer style="flex: 0 0 auto;">
-        <ul style="list-style-type: none">
-            <li>
-                <a href="/hi" style="font-size: 25px; text-decoration: none;">
-                    Главная
-                </a>
-            </li>
-    
-            <li>
-                <a href="/photos" style="font-size: 25px; text-decoration: none;">
-                    Фотографии
-                </a>
-            </li>
-    
-            <li>
-                <a href="/about" style="font-size: 25px; text-decoration: none;">
-                    Про меня
-                </a>
-            </li>
+    <footer class="footer">
+        <div class="footer_wrapper">
             
-            <li>
-                <a href="whyitis.html" style="font-size: 25px; text-decoration: none;">
-                    Почему ИТИС?
-                </a>
-            </li>
-        </ul>
+        </div>
     </footer>
-
+    <script type="text/javascript" src="about.js"></script>
 </body>
 </html>
