@@ -14,18 +14,17 @@ CREATE TABLE IF NOT EXISTS directions (
 CREATE TABLE IF NOT EXISTS groups (
 	group_id SERIAL PRIMARY KEY,
 	number VARCHAR(2) NOT NULL,
-	direction_id INTEGET NOT NULL,
-	FOREIGN KEY (direction_id) REFERENCES directions (id),
+	direction_id INTEGER NOT NULL,
+	FOREIGN KEY (direction_id) REFERENCES directions (direction_id),
 	description VARCHAR(100),
 	create_year VARCHAR(4) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS disciplines (
 	discipline_id SERIAL PRIMARY KEY,
-	year DATE NOT NULL,
+	year INTEGER NOT NULL,
 	name VARCHAR(15) NOT NULL,
 	semester varchar(1) NOT NULL
-	
 );
 
 CREATE TABLE IF NOT EXISTS students (
@@ -71,13 +70,13 @@ EXCEPTION
     WHEN duplicate_object THEN null;
 END $$;
 
-CREATE TABLE IF NOT EXISTS discplineResults(
+CREATE TABLE IF NOT EXISTS disciplineResults(
 	disciplineResults_id SERIAL PRIMARY KEY,
 	student_id INTEGER NOT NULL,
 	discipline_id INTEGER NOT NULL,
 	FOREIGN KEY (student_id) REFERENCES students (student_id),
 	FOREIGN KEY (discipline_id) REFERENCES disciplines (discipline_id),
-	points INTEGER CONSTRAINT discplineResults_points_check CHECK(points >0 AND points < 100),
+	points INTEGER CHECK(points >0 AND points < 100),
 	passed PASSED_STATE
 );
 
@@ -107,7 +106,4 @@ CREATE TABLE IF NOT EXISTS teacher(
 	FOREIGN KEY (disciplines_id) REFERENCES disciplines(discipline_id),
 	FOREIGN KEY (faculty_id) REFERENCES faculties(faculty_id)
 );
-
-
-
 
