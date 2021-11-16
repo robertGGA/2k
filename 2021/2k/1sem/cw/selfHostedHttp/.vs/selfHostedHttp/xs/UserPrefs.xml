@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{1E68F475-CE00-40D3-9C31-8C82FE2967E9}|Default">
+  <MonoDevelop.Ide.ItemProperties.selfHostedHttp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="script.js">
+    <Files>
+      <File FileName="Program.cs" Line="45" Column="4" />
+      <File FileName="script.js" Line="17" Column="1" />
+      <File FileName="pagesForRefactor/EmptyHtmlFile.html" Line="5" Column="13" />
+      <File FileName="index.html" Line="11" Column="37" />
+      <File FileName="pagesForRefactor/secondFile.css" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="selfHostedHttp" expanded="True">
+            <Node name="selfHostedHttp" expanded="True">
+              <Node name="pagesForRefactor" expanded="True" />
+              <Node name="script.js" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,58 @@
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	$.post("http://localhost:8080/index", { name: "John", time: "2pm" },
+		function(data) {
+		alert(data);
+	});
+
+
+	<div class="sample-toolbar">
+		<a href="javascript:void(0)" onclick="format('bold')"><span class="fa fa-bold fa-fw"></span></a>
+		<a href="javascript:void(0)" onclick="format('italic')"><span class="fa fa-italic fa-fw"></span></a>
+		<a href="javascript:void(0)" onclick="format('insertunorderedlist')"><span class="fa fa-list fa-fw"></span></a>
+		<a href="javascript:void(0)" onclick="setUrl()"><span class="fa fa-link fa-fw"></span></a>
+		<span><input id="txtFormatUrl" placeholder="url" class="form-control"></span>
+	</div>
+
+	<div class="editor" id="sampleeditor">
+		Реализовать следующий функционал:
+		<ul>
+			<li>Создать .NET Core проект c httpListener, который будет прослушивать ajax запросы с данной страницы. Можете использовать шаблоны проектоы, которые вы уже писали</li>
+			<li>Эту страницу тоже добавить в проект</li>
+			<li>Дописать эту страницу следующим образом:</li>
+			<ul>
+				<li>вначале организовать выбор html или css-файла с сервера для редактирования</li>
+				<li>список файлов должен подгружаться с сервера. выбор файла можете сделать по нажатию на кнопку Edit</li>
+				<li>после выбора файла открыть содержимое html-файла в данном редакторе</li>
+				<li>для css-файла добавить на этой странице ещё одно поле textarea, в котором будет открываться содержимое файла</li>
+				<li>добавить кнопку сохранить, для отправки измененного содержимого файла обратно на сервер для дальнейшего сохранения</li>
+				<li>время от времени отправлять запрос на сервер для проверки, не изменил ли этот файл кто-то ещё, в случае если изменили, выдавать сообщения пользователю</li>
+			</ul>
+			<li>Последний отредактированный файл следует помещать при следующем открытии этой страницы этим же пользователем в этом же браузере на первой строке в списке доступных файлов</li>
+			<li>Для ajax-запросов можно использовать jquery</li>
+		</ul>
+	</div>
+
+	<button id="edit">
+		edit
+	</button>
+
+	<scrpt>
+		$.ajax({
+		$.
+		});
+	</scrpt>
+
+	<script src="script.js">
+	</script>
+</body>
+</html>
+    
