@@ -5,21 +5,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using semWork.Data;
+using semWork.Models;
 
 namespace semWork.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
+        private readonly FuLearnContext _context;
+        public List<User> People { get; set; }
+        public IndexModel(FuLearnContext db)
         {
-            _logger = logger;
+            _context = db;
         }
-
         public void OnGet()
         {
-
+         
+            People = _context.users.ToList();
         }
     }
 }

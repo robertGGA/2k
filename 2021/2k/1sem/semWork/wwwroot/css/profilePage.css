@@ -1,0 +1,64 @@
+﻿.profile_container {
+    margin-top: 25px;
+    display: inherit;
+    flex-direction: column;
+    background-color: #dee8ec;
+    padding: 25px 20px;
+    min-height: 900px;
+    max-height: 100%;
+}
+
+.row_of_profile {
+    display: flex;
+    flex-direction: row;
+}
+
+.username_title {
+    margin-left: 30px;
+}
+
+.user_info {
+    margin: 15px 0 0 60px;
+}
+
+.li_courses {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.courses_container {
+    margin: 25px 0 0 30px;
+}
+
+.item_courses {
+    background-color: white;
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    max-width: 600px;
+    margin-bottom: 5px;
+}
+
+    .item_courses:last-child {
+        margin-bottom: 0;
+    }
+
+.label_of_item_course {
+    font-size: 18px;
+    font-weight: 900;
+    color: black;
+}
+
+    .label_of_item_course:hover {
+        color: darkgrey;
+    }
+
+.column_item {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.item_course_desc {
+    margin-top: 3px;
+}

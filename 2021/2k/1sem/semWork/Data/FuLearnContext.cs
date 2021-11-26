@@ -8,24 +8,25 @@ namespace semWork.Data
     {
         public FuLearnContext(DbContextOptions<FuLearnContext> options) : base(options)
         {
+            Database.EnsureCreated();
         }
 
-        public DbSet<Comment> Comments { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Course> Courses { get; set; }
-        public DbSet<FavouriteCourses> FavouriteCourses { get; set; }
-        public DbSet<Lessons> Lessons { get; set; }
-        public DbSet<SubLessons> SubLessons { get; set; }
+        public DbSet<Comment> comments { get; set; }
+        public DbSet<User> users { get; set; }
+        public DbSet<Course> courses { get; set; }
+        public DbSet<FavouriteCourses> favouriteCourses { get; set; }
+        public DbSet<Lessons> lessons { get; set; }
+        public DbSet<SubLessons> subLessons { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Course>().ToTable("Courses");
-            modelBuilder.Entity<User>().ToTable("Users");
-            modelBuilder.Entity<Comment>().ToTable("Comments");
-            modelBuilder.Entity<FavouriteCourses>().ToTable("FavouriteCourses");
-            modelBuilder.Entity<Lessons>().ToTable("Lessons");
-            modelBuilder.Entity<SubLessons>().ToTable("SubLessons");
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Course>().ToTable("Courses");
+        //    modelBuilder.Entity<User>().ToTable("Users");
+        //    modelBuilder.Entity<Comment>().ToTable("Comments");
+        //    modelBuilder.Entity<FavouriteCourses>().ToTable("FavouriteCourses");
+        //    modelBuilder.Entity<Lessons>().ToTable("Lessons");
+        //    modelBuilder.Entity<SubLessons>().ToTable("SubLessons");
+        //}
 
 
     }

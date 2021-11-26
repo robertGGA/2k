@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace semWork.Models
 {
     public class Lessons
     {
-        private int lessonId { get; set; }
-        private string description { get; set; }
-        private string page { get; set; }
-        private List<SubLessons> sublessons { get; set; }
+        [Key]
+        public int lessonId { get; set; }
+        public string description { get; set; }
+        public string page { get; set; }
+        public List<SubLessons> sublessons { get; set; }
     }
 }

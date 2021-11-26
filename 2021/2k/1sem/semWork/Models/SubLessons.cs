@@ -3,7 +3,7 @@ namespace semWork.Models
 {
     public class SubLessons
     {
-       private int sublessonId { get; set; }
-       private string info { get; set; }
+        public int Id { get; set; }
+        public string info { get; set; }
     }
 }

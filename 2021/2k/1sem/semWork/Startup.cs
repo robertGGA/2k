@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using semWork.Data;
+using semWork.Services;
 
 namespace semWork
 {
@@ -25,19 +26,16 @@ namespace semWork
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
-
 
             services.AddDbContext<FuLearnContext>(options =>
-        options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-   
-
-
-
+            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+        
+            services.AddRazorPages();
+            //services.AddSingleton<IUserRepository>;
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {

@@ -5,10 +5,10 @@ namespace semWork.Models
 {
     public class Course
     {
-        private int courseId { get; set; }
-        private List<Lessons> lessons { get; set; }
-        private string description { get; set; }
-        private int rate { get; set; }
-        private string photo { get; set; }
+        public int courseId { get; set; }
+        public List<Lessons> lessons { get; set; }
+        public string description { get; set; }
+        public int rate { get; set; }
+        public string photo { get; set; }
     }
 }

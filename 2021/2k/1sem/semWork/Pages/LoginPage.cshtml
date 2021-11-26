@@ -1,0 +1,78 @@
+@page
+@model semWork.Pages.LoginPageModel
+@{ ViewData["Title"] = "LoginPage"; }
+
+<h1>LoginPage</h1>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/mainPage.css">
+    <link rel="stylesheet" href="./css/regPage.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header_wrapper">
+        <div class="header">
+            <a class="logo">
+                FuLearn
+            </a>
+
+            <nav class="navbar">
+
+                <ul class="navbar_ul">
+                    <li class="nav_item">
+                        <a href="/hi">
+                            Помощь
+                        </a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="/hi">
+                            О нас
+                        </a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="/hi">
+                            Вход
+                        </a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a>
+                            Регистрация
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main_wrapper">
+            <div class="first_container">
+                <h1>Вход</h1>
+
+                <div class="form_container">
+                    <form class="forms">
+                        <input class="input_form" type="text" placeholder="Login">
+
+                        <input class="input_form" type="password" placeholder="Password">
+
+                        <input type="submit" class="button_submit" placeholder="Подтвердить">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

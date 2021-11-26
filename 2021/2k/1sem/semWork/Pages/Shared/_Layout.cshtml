@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/mainPage.css">
     <link href="//db.onlinewebfonts.com/c/f12193313d480890e2f1895b2b0ac89c?family=Choplin" rel="stylesheet" type="text/css" />
-    <title>Document</title>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="./css/mainPage.css">
+   
 </head>
 <body>
     <header class="header_wrapper">
@@ -14,8 +15,6 @@
             <a class="logo">
                 FuLearn
             </a>
-
-            <nav class="navbar">
 
                 <ul class="navbar_ul">
                     <li class="nav_item">
@@ -31,18 +30,17 @@
                     </li>
 
                     <li class="nav_item">
-                        <a>
-                            Вход
+                        <a asp-area="" asp-page="/Users/User">
+                            Вход (user)
                         </a>
                     </li>
 
                     <li class="nav_item">
-                        <a>
+                        <a asp-area="" asp-page="/Privacy">
                             Регистрация
                         </a>
                     </li>
                 </ul>
-            </nav>
         </div>
     </header>
 
