@@ -18,16 +18,19 @@
     <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL.Design" />
     <None Remove="Data\" />
     <None Remove="Services\" />
-    <None Remove="Repositories\" />
     <None Remove="Pages\Users\" />
+    <None Remove="Services\Impl\" />
+    <None Remove="Services\Interfaces\" />
+    <None Remove="NuGet.PackageManagement" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\EditorTemplates\" />
     <Folder Include="Models\" />
     <Folder Include="Data\" />
     <Folder Include="Services\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Pages\Users\" />
+    <Folder Include="Services\Impl\" />
+    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.0" />
@@ -41,5 +44,6 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Npgsql" Version="5.0.0" />
+    <PackageReference Include="NuGet.PackageManagement" Version="6.0.0" />
   </ItemGroup>
 </Project>

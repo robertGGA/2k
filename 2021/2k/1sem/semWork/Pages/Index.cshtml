@@ -60,10 +60,8 @@
                     Зарегистрироваться
                 </button>
 
-                @foreach (var user in Model.People)
-                {
-                    <tr><td>@user.login</td><td>@user.age</td></tr>
-                }
+                  <tr><td>@Model.user.login</td><td>@Model.user.age</td></tr>
+                
 
                 <button class="button">
                     Войти

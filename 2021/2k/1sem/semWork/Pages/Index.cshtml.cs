@@ -7,21 +7,25 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using semWork.Data;
 using semWork.Models;
+using semWork.Services;
 
 namespace semWork.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly FuLearnContext _context;
-        public List<User> People { get; set; }
-        public IndexModel(FuLearnContext db)
+        private readonly IUserRepository _db;
+        public IndexModel(IUserRepository db)
         {
-            _context = db;
+            _db = db;
         }
+
+        public IEnumerable<User> Users { get; set; }
+        public User user;
+
         public void OnGet()
         {
-         
-            People = _context.users.ToList();
+
+            user = _db.getUserByID(1);
         }
     }
 }

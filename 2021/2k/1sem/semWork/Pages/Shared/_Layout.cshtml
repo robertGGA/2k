@@ -7,7 +7,7 @@
     <link href="//db.onlinewebfonts.com/c/f12193313d480890e2f1895b2b0ac89c?family=Choplin" rel="stylesheet" type="text/css" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="./css/mainPage.css">
-   
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <header class="header_wrapper">
@@ -30,13 +30,13 @@
                     </li>
 
                     <li class="nav_item">
-                        <a asp-area="" asp-page="/Users/User">
+                        <a asp-area="" asp-page="/LoginPage">
                             Вход (user)
                         </a>
                     </li>
 
                     <li class="nav_item">
-                        <a asp-area="" asp-page="/Privacy">
+                        <a asp-area="" asp-page="/RegPage">
                             Регистрация
                         </a>
                     </li>

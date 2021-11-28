@@ -1,0 +1,11 @@
+@page
+@model semWork.Pages.Users.UserModel
+@{
+    ViewData["Title"] = "User";
+}
+
+<h1>User</h1>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,83 +1,34 @@
 @page
 @model semWork.Pages.RegPageModel
+@section Styles {
+    <link rel="stylesheet" href="./css/regPage.css">
+}
 @{ ViewData["Title"] = "RegPage"; }
 
-<h1>RegPage</h1>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<main class="main">
+    <div class="main_wrapper">
+        <div class="first_container">
+            <h1>Регистрация</h1>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/mainPage.css">
-    <link rel="stylesheet" href="./css/regPage.css">
-    <title>Document</title>
-</head>
-<body>
-    <header class="header_wrapper">
-        <div class="header">
-            <a class="logo">
-                FuLearn
-            </a>
+            <div class="form_container">
+                <form  method="post" asp-page-handler="CreateUser" class="forms">
+                    
+                        <input class="input_form" type="text" placeholder="Login" asp-for="Login" required>
 
-            <nav class="navbar">
+                        <input class="input_form" type="password" placeholder="Password" asp-for="Password" required>
 
-                <ul class="navbar_ul">
-                    <li class="nav_item">
-                        <a href="/hi">
-                            Помощь
-                        </a>
-                    </li>
-
-                    <li class="nav_item">
-                        <a href="/hi">
-                            О нас
-                        </a>
-                    </li>
-
-                    <li class="nav_item">
-                        <a href="/hi">
-                            Вход
-                        </a>
-                    </li>
-
-                    <li class="nav_item">
-                        <a>
-                            Регистрация
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main">
-        <div class="main_wrapper">
-            <div class="first_container">
-                <h1>Регистрация</h1>
-
-                <div class="form_container">
-                    <form class="forms">
-                        <input class="input_form" type="text" placeholder="Login">
-
-                        <input class="input_form" type="password" placeholder="Password">
-
-                        <input class="input_form" type="password" placeholder="Repeat password">
+                        <input class="input_form" type="password" placeholder="Repeat password" asp-for="ConfPassword" required>
 
 
-                        <input class="input_form" type="date" placeholder="Дата рождения">
+                        <input class="input_form" type="text" placeholder="Кол-во полных лет" asp-for="date" required>
+                    
 
-                        <input type="submit" class="button_submit" placeholder="Подтвердить">
-                    </form>
-                </div>
-
+                    <input type="submit" class="button_submit" placeholder="Подтвердить">
+                </form>
             </div>
+
         </div>
-    </main>
-</body>
-</html>
+    </div>
+</main>
+

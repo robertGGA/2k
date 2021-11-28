@@ -10,9 +10,10 @@ namespace semWork.Models
         public int user_id { get; set; }
         public string login { get; set; }
         public string password { get; set; }
-        public List<FavouriteCourses> favouriteCourse { get; set; }
+        public List<FavouriteCourses>? favouriteCourse { get; set; }
         public int age { get; set; }
-        public string photo { get; set; }
+        public string? photo { get; set; }
+       
     }
 
 }

@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using semWork.Data;
 using semWork.Services;
+using semWork.Services.Impl;
 
 namespace semWork
 {
@@ -29,6 +30,8 @@ namespace semWork
 
             services.AddDbContext<FuLearnContext>(options =>
             options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IUserRepository, UserRepository>();
         
             services.AddRazorPages();
             //services.AddSingleton<IUserRepository>;
