@@ -22,6 +22,8 @@
     <None Remove="Services\Impl\" />
     <None Remove="Services\Interfaces\" />
     <None Remove="NuGet.PackageManagement" />
+    <None Remove="BCrypt.Net-Next" />
+    <None Remove="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\EditorTemplates\" />
@@ -45,5 +47,7 @@
     </PackageReference>
     <PackageReference Include="Npgsql" Version="5.0.0" />
     <PackageReference Include="NuGet.PackageManagement" Version="6.0.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 </Project>

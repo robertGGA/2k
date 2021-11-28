@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using semWork.Data;
 using semWork.Models;
 
+
 namespace semWork.Services.Impl
 {
     public class UserRepository: IUserRepository
@@ -31,9 +32,9 @@ namespace semWork.Services.Impl
             return context.users.Find(id);
         }
 
-        public User getUserByName(string name)
+        public User getUserByName<User>(string name)
         {
-            throw new NotImplementedException();
+            var user = (IEnumerable<User>)(typeof([context]).GetProperty(name).GetValue(context, null);
         }
 
         public bool isUserExists(string name)

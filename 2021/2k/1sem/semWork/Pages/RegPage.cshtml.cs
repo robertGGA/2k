@@ -1,4 +1,5 @@
 using System;
+using BC = BCrypt.Net.BCrypt;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -45,11 +46,16 @@ namespace semWork.Pages
 
             } else
             {
+                var pass = BC.HashPassword(Password);
+
+                var confPass = BC.HashPassword(ConfPassword);
+
+                Console.WriteLine(pass + " " + confPass);
                 User.login = Login;
-                User.password = Password;
+                User.password = pass;
                 User.age = date;
                 _db.Add(User);
-                return Redirect("/Index");
+                return Redirect("/RegPage");
             }
             Console.WriteLine(Login + " " +  Password + " " + date);
             return Redirect("/Index");

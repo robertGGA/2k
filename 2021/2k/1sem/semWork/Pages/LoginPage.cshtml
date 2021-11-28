@@ -13,10 +13,10 @@
             <h1>Вход</h1>
 
             <div class="form_container">
-                <form class="forms">
-                    <input class="input_form" type="text" placeholder="Login">
+                <form class="forms" asp-page-handler="LoginUser">
+                    <input class="input_form" asp-for="Login" type="text" placeholder="Login">
 
-                    <input class="input_form" type="password" placeholder="Password">
+                    <input class="input_form" asp-for="Password" type="password" placeholder="Password">
 
                     <input type="submit" class="button_submit" placeholder="Подтвердить">
                 </form>
