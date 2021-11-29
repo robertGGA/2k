@@ -9,9 +9,11 @@ namespace semWork.Pages.Users
 {
     public class UserModel : PageModel
     {
+        [BindProperty]
+        public string name { get; set; }
         public void OnGet()
         {
-
+            name = Request.Cookies["User"];
         }
     }
 }

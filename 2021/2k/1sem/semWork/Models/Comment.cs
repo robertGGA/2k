@@ -6,7 +6,7 @@ namespace semWork.Models
     public class Comment
     {
         [Key]
-        public int personId { get; set; }
+        public int commentId { get; set; }
 
         public User userId { get; set; }
         public Course courseId { get; set; }

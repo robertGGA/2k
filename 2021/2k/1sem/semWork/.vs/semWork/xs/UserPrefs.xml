@@ -1,26 +1,36 @@
 ﻿<Properties StartupConfiguration="{176A7154-5209-4524-9EC1-247293985A34}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/RegPage.cshtml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Comment.cs">
     <Files>
-      <File FileName="Pages/LoginPage.cshtml" Line="6" Column="2" IsPinned="True" />
-      <File FileName="Pages/RegPage.cshtml" />
-      <File FileName="Pages/_ViewStart.cshtml" />
-      <File FileName="Pages/_ViewImports.cshtml" />
+      <File FileName="Pages/LoginPage.cshtml" Line="16" Column="66" IsPinned="True" />
+      <File FileName="Pages/RegPage.cshtml" Line="30" Column="15" />
+      <File FileName="Pages/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/_ViewImports.cshtml" Line="1" Column="1" />
       <File FileName="Pages/Index.cshtml" />
-      <File FileName="Pages/Shared/_Layout.cshtml" />
+      <File FileName="Pages/Shared/_Layout.cshtml" Line="38" Column="26" />
       <File FileName="Data/FuLearnContext.cs" />
       <File FileName="Pages/Index.cshtml.cs" />
-      <File FileName="Startup.cs" />
-      <File FileName="Services/Impl/UserRepository.cs" />
-      <File FileName="Program.cs" />
+      <File FileName="Startup.cs" Line="55" Column="34" />
+      <File FileName="Services/Impl/UserRepository.cs" Line="46" Column="14" />
+      <File FileName="Program.cs" Line="16" Column="1" />
       <File FileName="Pages/Error.cshtml" />
-      <File FileName="Pages/Privacy.cshtml" />
-      <File FileName="Pages/Users/User.cshtml" />
-      <File FileName="Pages/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="wwwroot/css/regPage.css" />
-      <File FileName="Pages/RegPage.cshtml.cs" Line="49" Column="54" />
+      <File FileName="Pages/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/Users/User.cshtml" Line="223" Column="7" />
+      <File FileName="Pages/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
+      <File FileName="wwwroot/css/regPage.css" Line="1" Column="1" />
+      <File FileName="Pages/RegPage.cshtml.cs" Line="58" Column="42" />
       <File FileName="wwwroot/css/site.css" />
-      <File FileName="Models/User.cs" />
-      <File FileName="Pages/LoginPage.cshtml.cs" />
+      <File FileName="Models/User.cs" Line="13" Column="38" />
+      <File FileName="Pages/LoginPage.cshtml.cs" Line="50" Column="79" />
+      <File FileName="Services/Interfaces/IUserRepository.cs" Line="17" Column="20" />
+      <File FileName="Pages/Users/User.cshtml.cs" Line="16" Column="44" />
+      <File FileName="wwwroot/css/profilePage.css" Line="65" Column="1" />
+      <File FileName="wwwroot/css/mainPage.css" Line="1" Column="1" />
+      <File FileName="Services/Interfaces/ICourseRepository.cs" Line="11" Column="58" />
+      <File FileName="Services/Interfaces/IFavouriteCourses.cs" Line="1" Column="1" />
+      <File FileName="Services/Interfaces/ICommentRepository.cs" Line="1" Column="1" />
+      <File FileName="Services/Interfaces/ISubLessons.cs" Line="1" Column="1" />
+      <File FileName="Services/Interfaces/ILessonRepository.cs" Line="1" Column="1" />
+      <File FileName="Models/Comment.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,15 +38,13 @@
           <Node name="semWork" expanded="True">
             <Node name="semWork" expanded="True">
               <Node name="Data" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Comment.cs" selected="True" />
+              </Node>
               <Node name="Pages" expanded="True">
                 <Node name="Shared" expanded="True" />
-                <Node name="Users" expanded="True" />
-                <Node name="Index.cshtml" expanded="True" />
                 <Node name="LoginPage.cshtml" expanded="True" />
-                <Node name="RegPage.cshtml" expanded="True">
-                  <Node name="RegPage.cshtml.cs" selected="True" />
-                </Node>
+                <Node name="User.cshtml" expanded="True" />
               </Node>
               <Node name="Services" expanded="True">
                 <Node name="Impl" expanded="True" />

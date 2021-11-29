@@ -16,22 +16,32 @@
                 FuLearn
             </a>
 
-                <ul class="navbar_ul">
+            <ul class="navbar_ul">
+                <li class="nav_item">
+                    <a>
+                        Помощь
+                    </a>
+                </li>
+
+                <li class="nav_item">
+                    <a>
+                        О нас
+                    </a>
+                </li>
+
+                @if (Context.Request.Cookies["User"] != null)
+                {
                     <li class="nav_item">
-                        <a>
-                            Помощь
+                        <a asp-area="" asp-page="/User">
+                            Профиль
                         </a>
                     </li>
-
-                    <li class="nav_item">
-                        <a>
-                            О нас
-                        </a>
-                    </li>
-
+                }
+                else
+                {
                     <li class="nav_item">
                         <a asp-area="" asp-page="/LoginPage">
-                            Вход (user)
+                            Вход
                         </a>
                     </li>
 
@@ -40,7 +50,10 @@
                             Регистрация
                         </a>
                     </li>
-                </ul>
+                }
+
+               
+            </ul>
         </div>
     </header>
 

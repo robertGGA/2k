@@ -37,6 +37,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.21",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
+          "Newtonsoft.Json": "13.0.1",
           "Npgsql": "5.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.0",

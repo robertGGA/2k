@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using semWork.Models;
 using semWork.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace semWork.Pages
 {
@@ -30,16 +31,24 @@ namespace semWork.Pages
 
         public void OnGet()
         {
-
+            if(Request.Cookies["User"] != null)
+            {
+                Redirect("/user");
+            }
         }
 
         public IActionResult OnPostLoginUser()
         {
-            //user = _db.getUserByName(Login);
-            if (BC.Verify(Password, user.password))
+            var userLocal = _db.getUserByName(Login);
+           
+            if (BC.Verify(Password, userLocal.password))
             {
-                Console.WriteLine("CONGRATZ");
-                return Redirect("/index");
+                var cookieOptions = new CookieOptions
+                {
+                    Expires = DateTime.Now.AddMinutes(5)
+                };
+                Response.Cookies.Append("User", userLocal.login, cookieOptions);
+                return Redirect("/user");
             } else
             {
                 Console.WriteLine("Failed");
