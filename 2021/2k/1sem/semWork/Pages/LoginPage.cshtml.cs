@@ -31,27 +31,29 @@ namespace semWork.Pages
 
         public void OnGet()
         {
-            if(Request.Cookies["User"] != null)
+            if (Request.Cookies["User"] == null)
             {
-                Redirect("/user");
+                return;
             }
+            Redirect("/user");
         }
 
         public IActionResult OnPostLoginUser()
         {
-            var userLocal = _db.getUserByName(Login);
+            user = _db.getUserByName(Login);
            
-            if (BC.Verify(Password, userLocal.password))
+            if (BC.Verify(Password, user.password))
             {
                 var cookieOptions = new CookieOptions
                 {
                     Expires = DateTime.Now.AddMinutes(5)
                 };
-                Response.Cookies.Append("User", userLocal.login, cookieOptions);
+                Response.Cookies.Append("User", user.login, cookieOptions);
+                Response.Cookies.Append("Id", user.user_id.ToString(), cookieOptions);
+                HttpContext.Session.Set("current_user", BitConverter.GetBytes(user.user_id));
                 return Redirect("/user");
             } else
             {
-                Console.WriteLine("Failed");
                 return Redirect("/LoginPage");
             }
             

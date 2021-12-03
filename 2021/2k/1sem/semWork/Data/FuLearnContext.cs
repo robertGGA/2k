@@ -17,6 +17,7 @@ namespace semWork.Data
         public DbSet<FavouriteCourses> favouriteCourses { get; set; }
         public DbSet<Lessons> lessons { get; set; }
         public DbSet<SubLessons> subLessons { get; set; }
+        public DbSet<Rate> rating { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{

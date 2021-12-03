@@ -1,14 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace semWork.Models
 {
     public class Course
     {
-        public int courseId { get; set; }
-        public List<Lessons> lessons { get; set; }
+        [Key]
+        public int course_id { get; set; }
+
+        [Required]
+        public string name { get; set; }
+
+        public List<Lessons> lesson_id { get; set; }
+
+        [Required]
         public string description { get; set; }
-        public int rate { get; set; }
+        
+        public List<Rate> rate { get; set; }
+        [Required]
         public string photo { get; set; }
     }
 }

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using semWork.Data;
 using semWork.Services;
 using semWork.Services.Impl;
+using semWork.Services.Interfaces;
 
 namespace semWork
 {
@@ -32,7 +33,13 @@ namespace semWork
             options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IUserRepository, UserRepository>();
-        
+            services.AddScoped<ICommentRepository, CommentRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
+
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+
             services.AddRazorPages();
             //services.AddSingleton<IUserRepository>;
         }
@@ -57,6 +64,10 @@ namespace semWork
             app.UseRouting();
 
             app.UseAuthorization();
+
+            _ = app.UseSession();
+
+            
 
             app.UseEndpoints(endpoints =>
             {

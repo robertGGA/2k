@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace semWork.Models
 {
     public class FavouriteCourses
     {
-        [Key]
-        public int userId { get; set; }
-
-        public List<Course> courses { get; set; }
+       [Key]
+        [Column(".fc_id")]
+        public int fc_id { get; set; }
+        [Required]
+        public int user_id { get; set; }
+        [Required]
+        public Course course_id { get; set; }
     }
 }

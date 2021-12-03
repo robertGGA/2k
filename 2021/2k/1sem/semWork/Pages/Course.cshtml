@@ -1,0 +1,11 @@
+@page
+@model semWork.Pages.CourseModel
+@{
+    ViewData["Title"] = "Course";
+}
+
+<h1>Course</h1>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

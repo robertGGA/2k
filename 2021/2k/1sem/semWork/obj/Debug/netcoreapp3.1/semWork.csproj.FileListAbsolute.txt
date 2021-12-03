@@ -198,3 +198,4 @@
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/bin/Debug/netcoreapp3.1/BCrypt.Net-Next.dll
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/Razor/Pages/User.cshtml.g.cs
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/Razor/Pages/CoursesList.cshtml.g.cs
