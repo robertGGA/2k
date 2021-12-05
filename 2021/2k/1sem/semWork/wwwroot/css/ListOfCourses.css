@@ -53,6 +53,14 @@
     margin-left: 15px;
 }
 
+.to_course {
+    margin-top: 7px;
+    font-size: 20px;
+    color: white;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: #93b0d0;
+}
 .first_row_of_course {
     display: flex;
     align-items: center;

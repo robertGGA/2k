@@ -27,5 +27,10 @@ namespace semWork.Pages
             courses = _db.GetAllCourses();
 
         }
+
+        //public IActionResult OnPostToCourse()
+        //{
+
+        //}
     }
 }

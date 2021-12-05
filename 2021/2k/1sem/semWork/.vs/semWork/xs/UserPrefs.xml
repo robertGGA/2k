@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{176A7154-5209-4524-9EC1-247293985A34}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Course.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/js/Course.js">
     <Files>
       <File FileName="Pages/LoginPage.cshtml" Line="5" Column="5" IsPinned="True" />
       <File FileName="Models/Comment.cs" IsPinned="True" />
@@ -32,7 +32,7 @@
       <File FileName="Models/FavouriteCourses.cs" Line="16" Column="16" />
       <File FileName="wwwroot/css/ListOfCourses.css" />
       <File FileName="Pages/CoursesList.cshtml.cs" Line="26" Column="13" />
-      <File FileName="Pages/CoursesList.cshtml" Line="24" Column="17" />
+      <File FileName="Pages/CoursesList.cshtml" Line="4" Column="1" />
       <File FileName="Services/Impl/CourseRepository.cs" />
       <File FileName="Models/Rate.cs" />
       <File FileName="Pages/User.cshtml.cs" Line="42" Column="1" />
@@ -42,7 +42,8 @@
       <File FileName="wwwroot/css/course.css" Line="93" Column="1" />
       <File FileName="Pages/Users/Create.cshtml" Line="1" Column="1" />
       <File FileName="Pages/Course.cshtml.cs" Line="1" Column="1" />
-      <File FileName="Pages/Course.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/Course.cshtml" Line="49" Column="15" />
+      <File FileName="wwwroot/js/Course.js" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -52,7 +53,7 @@
               <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
-                <Node name="Course.cshtml" expanded="True" selected="True" />
+                <Node name="Course.cshtml" expanded="True" />
               </Node>
               <Node name="Services" expanded="True">
                 <Node name="Impl" expanded="True" />
@@ -60,7 +61,9 @@
               </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="css" expanded="True" />
-                <Node name="js" expanded="True" />
+                <Node name="js" expanded="True">
+                  <Node name="Course.js" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
