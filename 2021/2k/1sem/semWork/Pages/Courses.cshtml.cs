@@ -9,28 +9,22 @@ using semWork.Services.Interfaces;
 
 namespace semWork.Pages
 {
-    public class CoursesListModel : PageModel
+    public class CoursesModel : PageModel
     {
-        
         public IEnumerable<Course> courses;
 
         private readonly ICourseRepository _db;
 
-        public CoursesListModel(ICourseRepository db)
-        {
-            _db = db;
-        }
+        public CoursesModel(ICourseRepository db) => _db = db;
 
         public void OnGet()
         {
-            
+            if (HttpContext.Request.Cookies["Id"] == null)
+            {
+                Redirect("/LoginPage");
+            }
             courses = _db.GetAllCourses();
 
         }
-
-        //public IActionResult OnPostToCourse()
-        //{
-
-        //}
     }
 }

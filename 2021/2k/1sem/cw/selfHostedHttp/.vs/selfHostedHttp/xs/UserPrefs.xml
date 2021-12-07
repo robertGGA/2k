@@ -3,10 +3,10 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
       <File FileName="Program.cs" Line="41" Column="1" />
-      <File FileName="script.js" Line="7" Column="2" />
-      <File FileName="pagesForRefactor/EmptyHtmlFile.html" Line="5" Column="13" />
-      <File FileName="index.html" Line="44" Column="18" />
-      <File FileName="pagesForRefactor/secondFile.css" Line="1" Column="1" />
+      <File FileName="script.js" />
+      <File FileName="pagesForRefactor/EmptyHtmlFile.html" />
+      <File FileName="index.html" />
+      <File FileName="pagesForRefactor/secondFile.css" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

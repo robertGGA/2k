@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using semWork.Data;
 using semWork.Models;
 
@@ -17,5 +18,7 @@ namespace semWork.Services
         public User getUserByName(String name);
 
         public bool isUserExists(String name);
+
+        public Task UpdateUserPhoto(User user);
     }
 }

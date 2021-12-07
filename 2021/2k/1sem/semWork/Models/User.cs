@@ -21,7 +21,7 @@ namespace semWork.Models
 
         [Required(ErrorMessage = "Возраст не может быть пустым")]
         public int age { get; set; }
-        public string? photo { get; set; }
+        public string photo { get; set; }
 
         public User(string login, string password, int age)
         {

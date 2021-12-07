@@ -5,6 +5,7 @@
 
 .course_container {
     margin-top: 25px;
+    margin-bottom: 25px;
     display: inherit;
     flex-direction: column;
     background-color: #dee8ec;

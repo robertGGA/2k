@@ -23,6 +23,7 @@
     <None Remove="NuGet.PackageManagement" />
     <None Remove="BCrypt.Net-Next" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="photos\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\EditorTemplates\" />
@@ -31,6 +32,7 @@
     <Folder Include="Services\" />
     <Folder Include="Services\Impl\" />
     <Folder Include="Services\Interfaces\" />
+    <Folder Include="photos\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.0" />

@@ -1,56 +1,52 @@
-@page
+@page "{id:int}"
 @model semWork.Pages.CourseModel
-@{ ViewData["Title"] = "Course"; }
+<div class="first_container">
+    <h1>Страница курса</h1>
+    <div class="course_container">
+        <div class="course_info">
+            <div class="course_cover">
+            </div>
+            <div class="course_text_info">
+                <h2>@Model.courseName</h2>
+                <p class="p_info">Оценка:</p>
 
-@section Styles {
-    <link rel="stylesheet" href="./css/.css">
-}
-        <div class="first_container">
-            <h1>Страница курса</h1>
-            <div class="course_container">
-                <div class="course_info">
-                    <div class="course_cover">
-                    </div>
-                    <div class="course_text_info">
-                        <h2>Курс нейм</h2>
-                        <p class="p_info">Оценка:</p>
+                <h3 class="subtitle_course">@Model.description</h3>
 
-                        <h3 class="subtitle_course">Описание</h3>
+                <p class="p_info">
+                    sdfjasdfas
+                </p>
 
-                        <p class="p_info">
-                            sdfjasdfas
-                        </p>
+                <button class="button_submit">
+                    Просмотреть
+                </button>
+            </div>
+        </div>
 
-                        <button class="button_submit">
-                            Просмотреть
-                        </button>
-                    </div>
+        <ul class="comments_container">
+            <li class="comment">
+                <img src="/books-g1ecf9eb61_1920.jpg" height="45" width="45" alt="userAvatar" />
+                <div class="comment_info_container">
+                    <p class="user_title">UserName</p>
+                    <p class="comment_info">
+                        Комментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоы Комментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоыКомментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоыКомментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоы
+                    </p>
                 </div>
 
-                <ul class="comments_container">
-                    <li class="comment">
-                        <img src="./books-g1ecf9eb61_1920.jpg" height="45" width="45" alt="userAvatar" />
-                        <div class="comment_info_container">
-                            <p class="user_title">UserName</p>
-                            <p class="comment_info">
-                                Комментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоы Комментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоыКомментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоыКомментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоы
-                            </p>
-                        </div>
 
+            </li>
 
-                    </li>
+            <li class="add_comment">
+                <form>
+                    <input type="text" class="add_comment_area" placeholder="Ваш комментарий" />
+                    <input type="submit" class="button_comment" />
+                </form>
+            </li>
+        </ul>
 
-                    <li class="add_comment">
-                        <form>
-                            <input type="text" class="add_comment_area" placeholder="Ваш комментарий" />
-                            <input type="submit" class="button_comment" />
-                        </form>
-                    </li>
+    </div>
 
 </div>
 
-        </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@section Styles {
+    <link rel="stylesheet" href="../../css/course.css">
 }

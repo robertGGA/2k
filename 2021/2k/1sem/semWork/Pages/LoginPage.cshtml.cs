@@ -40,13 +40,20 @@ namespace semWork.Pages
 
         public IActionResult OnPostLoginUser()
         {
-            user = _db.getUserByName(Login);
+            if (_db.getUserByName(Login) == null)
+            {
+                return Redirect("/LoginPage");
+            }
+            else
+            {
+                user = _db.getUserByName(Login);
+            }
            
             if (BC.Verify(Password, user.password))
             {
                 var cookieOptions = new CookieOptions
                 {
-                    Expires = DateTime.Now.AddMinutes(5)
+                    Expires = DateTime.Now.AddMinutes(10)
                 };
                 Response.Cookies.Append("User", user.login, cookieOptions);
                 Response.Cookies.Append("Id", user.user_id.ToString(), cookieOptions);
@@ -56,7 +63,8 @@ namespace semWork.Pages
             {
                 return Redirect("/LoginPage");
             }
-            
+
+            //Тимур, у меня к тебе важный вопрос. Как ты переходил по нужнему айтему в списке?
             
         }
     }

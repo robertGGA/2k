@@ -62,3 +62,24 @@
 .item_course_desc {
     margin-top: 3px;
 }
+
+.upload_files {
+    color: black;
+}
+
+    .upload_files:hover {
+        color: rgba(0, 0, 0, 0.192);
+    }
+
+.image_loader {
+    margin-top: 20px;
+}
+
+.button_logout {
+    display: flex;
+    margin-left: 160px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #93b0d0;
+    color: white;
+}

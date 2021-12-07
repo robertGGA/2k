@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using semWork.Data;
 using semWork.Models;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace semWork.Services.Impl
 {
@@ -27,6 +29,21 @@ namespace semWork.Services.Impl
             return context.users;
         }
 
+        public async Task UpdateUserPhoto(User user)
+        {
+            try
+            {
+                context.Update(user);
+                context.SaveChanges();
+            } catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+
+            
+
+        }
+
         public User getUserByID(int id)
         {
             return context.users.Find(id);
@@ -34,8 +51,10 @@ namespace semWork.Services.Impl
 
         public User getUserByName(string name)
         {
-            var user = context.users.Where(user => user.login.Equals(name));
-            return user.ToList<User>().FirstOrDefault();
+            var users = (from user in context.users
+                         where user.login == name
+                         select user).ToList();
+            return users.FirstOrDefault();
         }
 
      
