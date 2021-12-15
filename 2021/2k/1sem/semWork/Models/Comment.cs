@@ -1,15 +1,17 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace semWork.Models
 {
     public class Comment
     {
         [Key]
-        public int commentId { get; set; }
-
-        public User userId { get; set; }
-        public Course courseId { get; set; }
-        public string text { get; set; }
+        public int comment_id { get; set; }
+        
+        public User user { get; set; }
+        
+        public Course course { get; set; }
+        public string commenttext { get; set; }
     }
 }

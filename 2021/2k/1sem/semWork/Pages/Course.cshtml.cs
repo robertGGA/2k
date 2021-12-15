@@ -12,6 +12,7 @@ namespace semWork.Pages
     public class CourseModel : PageModel
     {
         private readonly ICourseRepository _db;
+        private readonly ICommentRepository _dbcom;
 
         [BindProperty]
         public string courseName { get; set; }
@@ -25,29 +26,39 @@ namespace semWork.Pages
         [BindProperty]
         public int rate { get; set; }
 
-        public string _ID;
+        [BindProperty]
+        public List<Comment> comments { get; set; }
+
+        private int id;
 
         Course course { get; set; }
 
 
 
 
-        public CourseModel(ICourseRepository db)
+        public CourseModel(ICourseRepository db, ICommentRepository dbcom)
         {
             _db = db;
+            _dbcom = dbcom;
         }
 
 
         public void OnGet(int id)
         {
+            this.id = id;
             course = _db.GetCourseById(id);
             photo = course.photo;
 
             description = course.description;
-
             courseName = course.name;
+
+            var comments = _dbcom.getCommentsByCourseID(course).ToList();
         }
 
-        public void OnGet() { }
+        public IActionResult OnPost()
+        {
+            return Redirect("/Course");
+        }
+
     }
 }

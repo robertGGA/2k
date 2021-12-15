@@ -26,5 +26,7 @@ namespace semWork.Pages
             courses = _db.GetAllCourses();
 
         }
+
+        
     }
 }

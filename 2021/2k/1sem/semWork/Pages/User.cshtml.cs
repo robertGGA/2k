@@ -26,10 +26,7 @@ namespace semWork.Pages.Users
         
         public User user { get; set; }
 
-        
-
-
-
+    
         public List<Course> Courses;
         private readonly IUserRepository _db;
         //private readonly ICourseRepository _dbCourse;
@@ -86,11 +83,15 @@ namespace semWork.Pages.Users
 
                 if(user.photo != null)
                 {
-                    System.IO.File.Delete(Path.Combine(_environment.ContentRootPath, "photos", user.photo));
+                    string path = _environment.WebRootPath + user.photo;
+                    //Console.WriteLine(Path.Combine(_environment.WebRootPath, "photos", user.photo));
+                    System.IO.File.Delete(path);
                 }
                 user.photo = "/photos/" + uploadFile();
+                //string path = new PathString("../photo/test.");
                 
             }
+        
             _db.UpdateUserPhoto(user);
             return Redirect("/user");
         }
@@ -101,7 +102,8 @@ namespace semWork.Pages.Users
 
             if (Photo != null)
             {
-                string uploadFolder = Path.Combine(_environment.ContentRootPath, "photos");
+                string uploadFolder = Path.Combine(_environment.WebRootPath, "photos");
+                Console.WriteLine(uploadFolder + " <<<<----");
                 fileName = Guid.NewGuid().ToString() + "_" + Photo.FileName;
                 Console.WriteLine(fileName);
                 string filePath = Path.Combine(uploadFolder, fileName);

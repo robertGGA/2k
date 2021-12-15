@@ -39,11 +39,9 @@
                                 @course.description
                             </p>
 
-                            <form asp-page="/Course" asp-route-id="@course.course_id">
-                                <input type="submit" id="to_course" class="to_course" placeholder="Перейти">
-                            </form>
-
-
+                            <a asp-area="" asp-page="/Course" asp-route-id="@course.course_id">
+                                Перейти на курс
+                            </a>
                         </div>
                     </li>
                 }

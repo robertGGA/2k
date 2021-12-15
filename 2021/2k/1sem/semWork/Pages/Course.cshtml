@@ -23,17 +23,21 @@
         </div>
 
         <ul class="comments_container">
-            <li class="comment">
-                <img src="/books-g1ecf9eb61_1920.jpg" height="45" width="45" alt="userAvatar" />
-                <div class="comment_info_container">
-                    <p class="user_title">UserName</p>
-                    <p class="comment_info">
-                        Комментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоы Комментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоыКомментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоыКомментарий о ваоыфжавлфыжваофыжваофжлыдовалдфыовадлфоы
-                    </p>
-                </div>
-
-
-            </li>
+            @if (Model.comments != null)
+            {
+                    @foreach (var comment in Model.comments)
+                    {
+                    <li class="comment">
+                        <img src="/books-g1ecf9eb61_1920.jpg" height="45" width="45" alt="userAvatar" />
+                        <div class="comment_info_container">
+                            <p class="user_title">UserName</p>
+                            <p class="comment_info">
+                        
+                            </p>
+                        </div>
+                    </li>
+                    }
+            }
 
             <li class="add_comment">
                 <form>
@@ -49,4 +53,5 @@
 
 @section Styles {
     <link rel="stylesheet" href="../../css/course.css">
+    <link rel="stylesheet" href="../../css/mainPage.css"/>
 }

@@ -21,7 +21,7 @@ namespace semWork.Services.Impl
 
         public Course GetCourseById(int id)
         {
-            throw new NotImplementedException();
+            return context.courses.Find(id);
         }
 
         public Course GetCourseByName(string name)
