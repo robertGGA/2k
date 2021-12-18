@@ -18,16 +18,13 @@ namespace semWork.Services.Impl
 
         public Comment addComment(Comment comment)
         {
-            throw new NotImplementedException();
+            context.Add(comment);
+            context.SaveChanges();
+            return comment;
         }
 
         public IEnumerable<Comment> getCommentsByCourseID(Course course)
         {
-            //Console.WriteLine(course.course_id);
-           
-
-            
-
             var comments = (from comment in context.comments
                             where comment.course.course_id == course.course_id
                             select comment).ToList();

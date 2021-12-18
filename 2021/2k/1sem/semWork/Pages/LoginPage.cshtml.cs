@@ -53,7 +53,7 @@ namespace semWork.Pages
             {
                 var cookieOptions = new CookieOptions
                 {
-                    Expires = DateTime.Now.AddMinutes(10)
+                    Expires = DateTime.Now.AddMinutes(30)
                 };
                 Response.Cookies.Append("User", user.login, cookieOptions);
                 Response.Cookies.Append("Id", user.user_id.ToString(), cookieOptions);
@@ -63,8 +63,6 @@ namespace semWork.Pages
             {
                 return Redirect("/LoginPage");
             }
-
-            //Тимур, у меня к тебе важный вопрос. Как ты переходил по нужнему айтему в списке?
             
         }
     }

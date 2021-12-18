@@ -36,7 +36,8 @@
 
 
                             <p class="description_course">
-                                @course.description
+                                @{course.description.Length > 25 ? course.description.Substring(0, 25) : course.description}
+
                             </p>
 
                             <a asp-area="" asp-page="/Course" asp-route-id="@course.course_id">
@@ -69,6 +70,7 @@
             })
         });
 
+       
     </script>
 
 

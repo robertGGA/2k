@@ -40,6 +40,7 @@ namespace semWork
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
             });
 
+            services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
             services.AddRazorPages();
             //services.AddSingleton<IUserRepository>;
         }

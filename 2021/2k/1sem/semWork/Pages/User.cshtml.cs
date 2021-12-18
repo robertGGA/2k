@@ -84,11 +84,9 @@ namespace semWork.Pages.Users
                 if(user.photo != null)
                 {
                     string path = _environment.WebRootPath + user.photo;
-                    //Console.WriteLine(Path.Combine(_environment.WebRootPath, "photos", user.photo));
                     System.IO.File.Delete(path);
                 }
                 user.photo = "/photos/" + uploadFile();
-                //string path = new PathString("../photo/test.");
                 
             }
         
@@ -122,24 +120,6 @@ namespace semWork.Pages.Users
             Response.Cookies.Delete("User");
             return Redirect("/index");
         }
-
-
-        //public JsonResult OnPostUpload()
-        //{
-        //    foreach (string file in Request.Files)
-        //    {
-        //        var upload = Request.Files[file];
-        //        if (upload != null)
-        //        {
-        //            // получаем имя файла
-        //            string fileName = System.IO.Path.GetFileName(upload.FileName);
-        //            // сохраняем файл в папку Files в проекте
-        //            upload.SaveAs(Se
-        //              ;
-        //        }
-        //    }
-        //    return Json("файл загружен");
-        //}
     }
 
 }

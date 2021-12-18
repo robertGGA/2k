@@ -1,4 +1,4 @@
-@page "{id:int}"
+@page "{id:int}/{handler?}"
 @model semWork.Pages.CourseModel
 <div class="first_container">
     <h1>Страница курса</h1>
@@ -25,24 +25,26 @@
         <ul class="comments_container">
             @if (Model.comments != null)
             {
-                    @foreach (var comment in Model.comments)
-                    {
+                @foreach (var comment in Model.comments)
+                {
                     <li class="comment">
-                        <img src="/books-g1ecf9eb61_1920.jpg" height="45" width="45" alt="userAvatar" />
+                        <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
                         <div class="comment_info_container">
-                            <p class="user_title">UserName</p>
+                            <p class="user_title">@Model.user.login</p>
                             <p class="comment_info">
-                        
+                                @comment.commenttext
                             </p>
                         </div>
                     </li>
-                    }
+                 }
             }
+            <li id="display_comment" class="add_comment">
+                <form id="addComment" asp-page-handler="CreateComment" method="post">
+                    <input id="commentValue" type="text" autocomplete="off" asp-for="comment" class="add_comment_area" placeholder="Ваш комментарий" />
+                    <input id="addComment" type="submit" class="button_comment" />
+                    <input type="hidden" value="@Model.CourseId" asp-for="CourseId" />
 
-            <li class="add_comment">
-                <form>
-                    <input type="text" class="add_comment_area" placeholder="Ваш комментарий" />
-                    <input type="submit" class="button_comment" />
+                    <input type="hidden" value="@Model.user.user_id" asp-for="user" />
                 </form>
             </li>
         </ul>
@@ -51,7 +53,64 @@
 
 </div>
 
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script>
+    @*jQuery(document).ready(function ($) {
+        $(document).on("click", "#addComment", function (e) {
+            event.preventDefault();
+            let searchValue = $("#commentValue").val();
+            const data = {
+                comment: searchValue,
+                user: @Model.user,
+                course: @Model.CourseId
+             }
+
+            $.ajax({
+                type: "POST",
+                url: '/Course/@Model.CourseId',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                contentType: "application/json; charset=utf-8",
+            }).done(function (data) {
+                console.log(data.result);
+        })
+    });*@
+
+    @*jQuery(function () {
+        jQuery("#output").html("working...");
+        jQuery.ajax({
+            type: "get",
+            url: "Course",
+            dataType: "html"
+        }).done(function (result) {
+            jQuery("#output").html(result);
+        });
+
+
+    });*@
+</script>
+
+
+    @*completed = () => {
+        $.ajax({
+            type: "POST",
+            url: '/Course/@Model.id',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+        }).done(function (data) {
+            console.log(data.result);
+        })
+    };*@
+
 @section Styles {
     <link rel="stylesheet" href="../../css/course.css">
-    <link rel="stylesheet" href="../../css/mainPage.css"/>
+    <link rel="stylesheet" href="../../css/mainPage.css" />
 }

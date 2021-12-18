@@ -40,8 +40,6 @@ namespace semWork.Services.Impl
                 throw;
             }
 
-            
-
         }
 
         public User getUserByID(int id)
