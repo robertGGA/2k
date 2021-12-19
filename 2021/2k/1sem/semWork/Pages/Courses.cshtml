@@ -25,22 +25,22 @@
 
                         <img src="@course.photo" height="150" width="140" />
                         <div class="course_container">
+                            <div>
+                                <h2>
+                                    @course.name
+                                </h2>
 
-                            <h2>
-                                @course.name
-                            </h2>
+                                <div class="rate">
+                                    Балл курса:
+                                </div>
 
-                            <div class="rate">
-                                Балл курса:
+
+                                <p class="description_course">
+                                    @course.description
+                                </p>
                             </div>
 
-
-                            <p class="description_course">
-                                @{course.description.Length > 25 ? course.description.Substring(0, 25) : course.description}
-
-                            </p>
-
-                            <a asp-area="" asp-page="/Course" asp-route-id="@course.course_id">
+                            <a style="color: black" asp-area="" asp-page="/Course" asp-route-id="@course.course_id">
                                 Перейти на курс
                             </a>
                         </div>

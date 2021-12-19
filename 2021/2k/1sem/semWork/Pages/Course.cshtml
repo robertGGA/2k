@@ -1,5 +1,6 @@
 @page "{id:int}/{handler?}"
 @model semWork.Pages.CourseModel
+@Html.AntiForgeryToken()
 <div class="first_container">
     <h1>Страница курса</h1>
     <div class="course_container">
@@ -7,15 +8,28 @@
             <div class="course_cover">
             </div>
             <div class="course_text_info">
-                <h2>@Model.courseName</h2>
-                <p class="p_info">Оценка:</p>
+                <div>
+                    <div class="course_first_row">
+                        <h2>@Model.courseName</h2>
 
-                <h3 class="subtitle_course">@Model.description</h3>
+                        <button class="button_like">
+                            <?xml version="1.0" ?>
+                            <svg width="640" height="480" viewbox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+                                <title>Small red heart with transparent background</title>
+                                <g>
+                                    <title>Layer 1</title>
+                                    <g id="layer1">
+                                        <path id="svg_2" d="m219.28949,21.827393c-66.240005,0 -119.999954,53.76001 -119.999954,120c0,134.755524 135.933151,170.08728 228.562454,303.308044c87.574219,-132.403381 228.5625,-172.854584 228.5625,-303.308044c0,-66.23999 -53.759888,-120 -120,-120c-48.047913,0 -89.401611,28.370422 -108.5625,69.1875c-19.160797,-40.817078 -60.514496,-69.1875 -108.5625,-69.1875z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
 
-                <p class="p_info">
-                    sdfjasdfas
-                </p>
+                    <p class="p_info">Оценка:</p>
 
+                    <h3 class="subtitle_course">@Model.description</h3>
+                </div>
                 <button class="button_submit">
                     Просмотреть
                 </button>
@@ -25,27 +39,26 @@
         <ul class="comments_container">
             @if (Model.comments != null)
             {
-                @foreach (var comment in Model.comments)
-                {
-                    <li class="comment">
-                        <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
-                        <div class="comment_info_container">
-                            <p class="user_title">@Model.user.login</p>
-                            <p class="comment_info">
-                                @comment.commenttext
-                            </p>
-                        </div>
-                    </li>
-                 }
-            }
+@foreach (var comment in Model.comments)
+{
+<li class="comment">
+    <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
+    <div class="comment_info_container">
+        <p class="user_title">@Model.user.login</p>
+        <p class="comment_info">
+            @comment.commenttext
+        </p>
+    </div>
+</li>}            }
             <li id="display_comment" class="add_comment">
-                <form id="addComment" asp-page-handler="CreateComment" method="post">
-                    <input id="commentValue" type="text" autocomplete="off" asp-for="comment" class="add_comment_area" placeholder="Ваш комментарий" />
-                    <input id="addComment" type="submit" class="button_comment" />
-                    <input type="hidden" value="@Model.CourseId" asp-for="CourseId" />
-
-                    <input type="hidden" value="@Model.user.user_id" asp-for="user" />
-                </form>
+                @*<form id="addComment" method="post">*@
+                <input id="commentValue" type="text" autocomplete="off" asp-for="comment" class="add_comment_area" placeholder="Ваш комментарий" />
+                @*<input id="addComment" type="submit" class="button_comment" />*@
+                <button id="addComment" type="submit" class="button_comment" asp-page-handler="CreateComment" asp-route-id="@Model.CourseId">
+                </button>
+                <input type="hidden" value="@Model.CourseId" asp-for="CourseId" />
+                <input type="hidden" value="@Model.user.user_id" asp-for="user" />
+                @*</form>*@
             </li>
         </ul>
 
@@ -55,30 +68,33 @@
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
 <script>
-    @*jQuery(document).ready(function ($) {
+    jQuery(document).ready(function ($) {
         $(document).on("click", "#addComment", function (e) {
             event.preventDefault();
             let searchValue = $("#commentValue").val();
             const data = {
-                comment: searchValue,
-                user: @Model.user,
-                course: @Model.CourseId
+                Text: searchValue,
+                UserId: @(Model.user.user_id),
+                CourseId: @(Model.CourseId)
              }
+
 
             $.ajax({
                 type: "POST",
-                url: '/Course/@Model.CourseId',
+                url: '/Course/@(Model.CourseId)?handler=CreateComment',
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader("XSRF-TOKEN",
                         $('input:hidden[name="__RequestVerificationToken"]').val());
                 },
-                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8"
             }).done(function (data) {
-                console.log(data.result);
-        })
-    });*@
+                jQuery.
+                })
+            });
+        });
 
     @*jQuery(function () {
         jQuery("#output").html("working...");
@@ -95,7 +111,7 @@
 </script>
 
 
-    @*completed = () => {
+@*completed = () => {
         $.ajax({
             type: "POST",
             url: '/Course/@Model.id',

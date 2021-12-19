@@ -6,6 +6,8 @@ namespace semWork.Services.Interfaces
 {
     public interface ILessonRepository
     {
-        public List<Lessons> GetLessonsByCourseName(string name);
+        public List<Lessons> GetLessonsByCourseId(int id);
+
+        public Lessons GetLessonById(int id);
     }
 }

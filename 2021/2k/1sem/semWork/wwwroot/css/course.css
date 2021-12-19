@@ -26,6 +26,9 @@
 
 .course_text_info {
     margin-left: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .p_info {
@@ -43,6 +46,7 @@
     background-color: #93b0d0;
     color: #fff;
     border-radius: 10px;
+    max-width: 170px;
 }
 
 .comments_container {
@@ -93,4 +97,31 @@
     width: 80px;
     color: white;
     background-color: #93b0d0;
+}
+
+.button_like {
+    background-color: inherit;
+}
+
+svg {
+    display: block;
+    width: 30px;
+    height: auto;
+}
+
+#svg_2 {
+    fill: transparent;
+    stroke: #f00;
+    stroke-width: 6px;
+    cursor: pointer;
+    transition: fill .3s;
+}
+
+    #svg_2.filled {
+        fill: #f00;
+    }
+
+.course_first_row {
+    display: flex;
+    justify-content: space-between;
 }

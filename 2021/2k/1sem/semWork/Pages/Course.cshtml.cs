@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
+using semWork.dto;
 using semWork.Models;
 using semWork.Services;
 using semWork.Services.Interfaces;
+
 
 namespace semWork.Pages
 {
@@ -70,17 +74,47 @@ namespace semWork.Pages
             comments = _dbcom.getCommentsByCourseID(course).ToList();
         }
 
-        public IActionResult OnPostCreateComment(int user, int courseId)
+        public ActionResult OnPostCreateComment()
         {
-            User currentUser = _userdb.getUserByID(user);
-            this.user = currentUser;
-            Course currentCourse = _db.GetCourseById(courseId);
-            this.course = course;
-            Comment localComment = new Comment(currentUser, currentCourse, comment);
+
+            string text = "";
+            string user = "";
+            string course = "";
+            {
+                MemoryStream stream = new MemoryStream();
+                Request.Body.CopyTo(stream);
+                stream.Position = 0;
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string requestBody = reader.ReadToEnd();
+                    if (requestBody.Length > 0)
+                    {
+                        var obj = JsonConvert.DeserializeObject<CommentWrapper>(requestBody);
+                        if (obj != null)
+                        {
+                            text = obj.Text;
+                            user = obj.UserId;
+                            course = obj.CourseId;
+                        }
+                    }
+                }
+            }
+            User currentUser = _userdb.getUserByID(int.Parse(user));
+            //this.user = currentUser;
+            Course currentCourse = _db.GetCourseById(int.Parse(course));
+            //this.course = course;
+            Comment localComment = new Comment(currentUser, currentCourse, text);
 
             _dbcom.addComment(localComment);
             comments.Add(localComment);
-            return Redirect("/Course/" + courseId);
+
+            List<string> lstString = new List<string>
+                {
+                    text,
+                    user,
+                    course
+                };
+            return new JsonResult(lstString);
 
         }
 

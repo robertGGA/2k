@@ -52,6 +52,9 @@
 .course_container {
     margin-left: 15px;
     width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
 }
 
 .to_course {
@@ -78,4 +81,8 @@
 .description_course {
     margin-top: 5px;
     margin-left: 25px;
+}
+
+.toCourseLink {
+    color: black;
 }
