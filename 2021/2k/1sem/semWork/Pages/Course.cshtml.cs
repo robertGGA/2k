@@ -19,6 +19,7 @@ namespace semWork.Pages
         private readonly ICourseRepository _db;
         private readonly ICommentRepository _dbcom;
         private readonly IUserRepository _userdb;
+        private readonly IFavouriteCourses _favdb;
 
         [BindProperty]
         public string courseName { get; set; }
@@ -47,14 +48,18 @@ namespace semWork.Pages
         [BindProperty]
         public Course course { get; set; }
 
+        [BindProperty]
+        public bool isFavourite { get; set; }
 
 
 
-        public CourseModel(ICourseRepository db, ICommentRepository dbcom, IUserRepository userdb)
+
+        public CourseModel(ICourseRepository db, ICommentRepository dbcom, IUserRepository userdb, IFavouriteCourses favdb)
         {
             _db = db;
             _dbcom = dbcom;
             _userdb = userdb;
+            _favdb = favdb;
         }
 
 
@@ -72,6 +77,45 @@ namespace semWork.Pages
             courseName = course.name;
             user = _userdb.getUserByID(int.Parse(HttpContext.Request.Cookies["Id"]));
             comments = _dbcom.getCommentsByCourseID(course).ToList();
+        }
+
+        public ActionResult OnPostAddFavCourse()
+        {
+            int course = 0;
+            int user = 0;
+            {
+                MemoryStream stream = new MemoryStream();
+                Request.Body.CopyTo(stream);
+                stream.Position = 0;
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string requestBody = reader.ReadToEnd();
+                    if (requestBody.Length > 0)
+                    {
+                        var obj = JsonConvert.DeserializeObject<FavCoursesWrapper>(requestBody);
+                        if (obj != null)
+                        {
+                            course = int.Parse(obj.CourseId);
+                            user = int.Parse(obj.UserId);
+                        }
+                    }
+                }
+                
+                if (_favdb.IsExists(course, user)) 
+                {
+                    FavouriteCourses favCourse = _favdb.GetCourseByUserIdAndCourseId(course, user);
+                    _favdb.DeleteFavouriteCourse(favCourse);
+                    return new JsonResult(false);
+
+                } else
+                {
+                    FavouriteCourses favCourse = new FavouriteCourses(_userdb.getUserByID(user), _db.GetCourseById(course));
+                    _favdb.AddFavouriteCourse(favCourse);
+                    return new JsonResult(true);
+                }
+            }
+
+            
         }
 
         public ActionResult OnPostCreateComment()

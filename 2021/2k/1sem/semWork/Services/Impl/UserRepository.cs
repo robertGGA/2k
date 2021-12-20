@@ -55,8 +55,6 @@ namespace semWork.Services.Impl
             return users.FirstOrDefault();
         }
 
-     
-
         public bool isUserExists(string name)
         {
             if(context.users.Find(name) != null)

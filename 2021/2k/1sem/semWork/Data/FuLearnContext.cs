@@ -14,7 +14,7 @@ namespace semWork.Data
         public DbSet<Comment> comments { get; set; }
         public DbSet<User> users { get; set; }
         public DbSet<Course> courses { get; set; }
-        public DbSet<FavouriteCourses> favouriteCourses { get; set; }
+        public DbSet<FavouriteCourses> favourite_courses { get; set; }
         public DbSet<Lessons> lessons { get; set; }
         public DbSet<SubLessons> subLessons { get; set; }
         public DbSet<Rate> rating { get; set; }

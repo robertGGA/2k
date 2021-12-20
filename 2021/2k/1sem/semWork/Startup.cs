@@ -36,6 +36,7 @@ namespace semWork
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICommentRepository, CommentRepository>();
             services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<IFavouriteCourses, FavouriteCourse>();
 
             services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
 

@@ -5,14 +5,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace semWork.Models
 {
+    [Table("favourite_courses")]
     public class FavouriteCourses
     {
        [Key]
         [Column(".fc_id")]
         public int fc_id { get; set; }
-        [Required]
-        public int user_id { get; set; }
-        [Required]
-        public Course course_id { get; set; }
+        [Column("user_id")]
+        public User user { get; set; }
+        [Column("course_id")]
+        public Course course { get; set; }
+
+        public FavouriteCourses() { }
+
+        public FavouriteCourses(User user, Course course)
+        {
+            this.user = user;
+            this.course = course;
+        }
     }
+
+   
 }

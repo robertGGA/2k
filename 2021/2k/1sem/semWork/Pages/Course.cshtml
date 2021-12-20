@@ -12,7 +12,7 @@
                     <div class="course_first_row">
                         <h2>@Model.courseName</h2>
 
-                        <button class="button_like">
+                         <button id="toFav" class="button_like">
                             <?xml version="1.0" ?>
                             <svg width="640" height="480" viewbox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
                                 <title>Small red heart with transparent background</title>
@@ -91,10 +91,36 @@
                 dataType: "json",
                 contentType: "application/json; charset=utf-8"
             }).done(function (data) {
-                jQuery.
+                alert("added by ajax")
                 })
-            });
         });
+
+        $(document).on('click', "#toFav", function (e) {
+            const data = {
+                CourseId: @(Model.CourseId),
+                UserId: @(Model.user.user_id)
+            };
+
+            event.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: '/Course/@(Model.CourseId)?handler=AddFavCourse',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("XSRF-TOKEN",
+                            $('input:hidden[name="__RequestVerificationToken"]').val());
+                    },
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8"
+                }).done((data) => {
+                    alert(data)
+                }).error(() => {
+                    alert("error");
+                });
+        })
+    });
+
+
 
     @*jQuery(function () {
         jQuery("#output").html("working...");

@@ -3,8 +3,7 @@ namespace semWork.dto
 {
     public class FavCoursesWrapper
     {
-        public FavCoursesWrapper()
-        {
-        }
+        public string UserId;
+        public string CourseId;
     }
 }
