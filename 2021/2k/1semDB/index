@@ -1,0 +1,41 @@
+CREATE TABLE IF NOT EXISTS films(
+    name varchar(50) NOT NULL,
+    description text NOT NULL,
+    year int NOT NULL,
+    genre varchar(70),
+    rate int NOT NULL,
+    country varchar(50)
+);
+
+SELECT * FROM films f
+WHERE year = 2007;
+/* without index - 106ms*/
+
+CREATE INDEX films_name_description_idx
+ON films(name, description);
+/* with index - 97ms */
+
+SELECT f.country, f.name FROM films f
+WHERE  f.country = 'Russia';
+/* without 119ms*/
+
+CREATE INDEX films_name_country
+ON films(country, name);
+/* with 64ms */
+
+SELECT * FROM films f
+WHERE f.rate = 10;
+/* 208ms without index */
+
+CREATE INDEX films_rate ON films(rate)
+WHERE rate = 10
+/* 132ms with index */
+
+SELECT * FROM films f
+WHERE f.rate = 10 or f.rate < 10
+ORDER BY name;
+/* 132ms without index*/
+
+CREATE INDEX films_rate_idx ON films(name ASC)
+
+/* with index 103ms*/

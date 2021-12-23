@@ -1,6 +1,4 @@
-@*@page "/Course/{id:int?}/lesson/{page:int?}"*@
-@*@page "/lesson/{id:int}"*@
-@page
+@page "/Course/{id: int}/lesson/{page: int}"
 @model semWork.Pages.LessonModel
 @{ ViewData["Title"] = "Lesson"; }
 

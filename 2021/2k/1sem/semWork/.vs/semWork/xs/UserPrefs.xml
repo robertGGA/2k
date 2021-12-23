@@ -1,43 +1,60 @@
 ﻿<Properties StartupConfiguration="{176A7154-5209-4524-9EC1-247293985A34}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/Impl/FavouriteCourse.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Course.cshtml.cs">
     <Files>
       <File FileName="Models/Comment.cs" Line="11" Column="39" />
       <File FileName="dto/CommentWrapper.cs" />
-      <File FileName="Pages/Course.cshtml.cs" />
-      <File FileName="Pages/Course.cshtml" />
-      <File FileName="Services/Impl/CommentRepository.cs" />
+      <File FileName="Pages/Course.cshtml.cs" Line="78" Column="1" />
+      <File FileName="Pages/Course.cshtml" Line="33" Column="54" />
+      <File FileName="Services/Impl/CommentRepository.cs" Line="28" Column="13" />
       <File FileName="Models/User.cs" />
       <File FileName="Services/Impl/UserRepository.cs" />
-      <File FileName="Startup.cs" />
+      <File FileName="Startup.cs" Line="30" Column="67" />
       <File FileName="Services/Interfaces/IUserRepository.cs" />
       <File FileName="Models/FavouriteCourses.cs" />
       <File FileName="dto/FavCoursesWrapper.cs" />
-      <File FileName="Services/Interfaces/IFavouriteCourses.cs" />
-      <File FileName="Services/Impl/CourseRepository.cs" />
-      <File FileName="Services/Impl/LessonRepository.cs" />
+      <File FileName="Services/Interfaces/IFavouriteCourses.cs" Line="17" Column="33" />
+      <File FileName="Services/Impl/CourseRepository.cs" Line="26" Column="1" />
+      <File FileName="Services/Impl/LessonRepository.cs" Line="28" Column="50" />
       <File FileName="Models/Course.cs" />
       <File FileName="Data/FuLearnContext.cs" />
       <File FileName="Models/SubLessons.cs" />
       <File FileName="Models/Rate.cs" />
-      <File FileName="Models/Lessons.cs" />
-      <File FileName="Services/Impl/FavouriteCourse.cs" Line="58" Column="1" />
+      <File FileName="Models/Lessons.cs" Line="11" Column="41" />
+      <File FileName="Services/Impl/FavouriteCourse.cs" Line="1" Column="1" />
+      <File FileName="Pages/Lesson.cshtml" Line="3" Column="6" />
+      <File FileName="Pages/Lesson.cshtml.cs" Line="29" Column="53" />
+      <File FileName="Pages/Shared/_Layout.cshtml" Line="70" Column="25" />
+      <File FileName="wwwroot/css/lesson.css" Line="49" Column="1" />
+      <File FileName="Pages/Courses.cshtml.cs" Line="14" Column="10" />
+      <File FileName="Pages/Courses.cshtml" Line="57" Column="9" />
+      <File FileName="Pages/Lesson.cshtml~" Line="1" Column="1" />
+      <File FileName="Pages/Course.cshtml~" Line="1" Column="1" />
+      <File FileName="Pages/Course.cshtml.cs~" Line="1" Column="1" />
+      <File FileName="Services/Interfaces/ILessonRepository.cs" Line="9" Column="16" />
+      <File FileName="Services/Interfaces/ICourseRepository.cs" Line="12" Column="1" />
+      <File FileName="Pages/LoginPage.cshtml" Line="34" Column="30" />
+      <File FileName="Pages/LoginPage.cshtml.cs" Line="45" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="semWork" expanded="True">
             <Node name="semWork" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="dto" expanded="True" />
-              <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
-                <Node name="Course.cshtml" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="Course.cshtml" expanded="True">
+                  <Node name="Course.cshtml.cs" selected="True" />
+                </Node>
+                <Node name="Courses.cshtml" expanded="True" />
+                <Node name="Lesson.cshtml" expanded="True" />
+                <Node name="LoginPage.cshtml" expanded="True" />
               </Node>
               <Node name="Services" expanded="True">
-                <Node name="Impl" expanded="True">
-                  <Node name="FavouriteCourse.cs" selected="True" />
-                </Node>
+                <Node name="Impl" expanded="True" />
                 <Node name="Interfaces" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
               </Node>
             </Node>
           </Node>

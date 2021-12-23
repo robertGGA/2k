@@ -30,7 +30,7 @@
 
                     <h3 class="subtitle_course">@Model.description</h3>
                 </div>
-                <a class="button_submit" asp-page="/Lesson">
+                <a class="button_submit" asp-page="/Course" asp-route-id="@Model.CourseId" asp-route-page="">//Добавить саблесоны
                     Просмотреть
                 </a>
             </div>
