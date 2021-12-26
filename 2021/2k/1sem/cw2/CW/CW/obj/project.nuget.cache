@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ps2+Bzr3fbwnnGh+WdHiZk2iIHiMmVDwoSeEa0ns7mYispV7wugVvmZHAm32iarbb3LtEFyTZyasu1UOL2j0ow==",
+  "success": true,
+  "projectFilePath": "/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/cw2/CW/CW/CW.csproj",
+  "expectedPackageFiles": [
+    "/Users/gadelshinrr/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/xamarin.forms/5.0.0.2291/xamarin.forms.5.0.0.2291.nupkg.sha512"
+  ],
+  "logs": []
+}

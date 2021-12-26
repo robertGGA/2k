@@ -1,0 +1,7 @@
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/cw2/CW/CW/obj/Debug/netstandard2.0/CW.csproj.AssemblyReference.cache
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/cw2/CW/CW/obj/Debug/netstandard2.0/CW.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/cw2/CW/CW/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/cw2/CW/CW/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/cw2/CW/CW/obj/Debug/netstandard2.0/CW.AssemblyInfoInputs.cache
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/cw2/CW/CW/obj/Debug/netstandard2.0/CW.AssemblyInfo.cs
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/cw2/CW/CW/obj/Debug/netstandard2.0/CW.csproj.CoreCompileInputs.cache

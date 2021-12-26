@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{1C4FA565-C1EE-483E-90E2-F41EBB3EB9EE}|Default">
+  <MonoDevelop.Ide.ItemProperties.App.macOS PreferredExecutionTarget="Test1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../../../../../Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/bin/MSBuild/Current/bin/Microsoft.Common.CurrentVersion.targets">
+    <Files>
+      <File FileName="Game.MacOS/AppDelegate.cs" Line="33" Column="6" />
+      <File FileName="Game/App.xaml" Line="1" Column="1" />
+      <File FileName="Game.MacOS/Main.cs" Line="10" Column="74" />
+      <File FileName="../../../../../../../../../../Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/bin/MSBuild/Current/bin/Microsoft.Common.CurrentVersion.targets" Line="1982" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MyGame" expanded="True">
+            <Node name="App.macOS" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="NativeReferenceFolder" selected="True" />
+              <Node name="Packages" expanded="True" />
+            </Node>
+            <Node name="Game.iOS" expanded="True" />
+            <Node name="MainGame" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Game.iOS FirstBuild="True" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.62691D4A-0427-4FAC-9D28-A4D99D56F38F" />
+</Properties>

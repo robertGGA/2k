@@ -16,8 +16,7 @@ namespace semWork.Models
         [RegularExpression("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", ErrorMessage = "Пароль должен содержать как минимум 8 символов, 1 букву и 1 число")]
         public string password { get; set; }
 
-        [ForeignKey("favourite_course")]
-        public List<FavouriteCourses> favourite_course { get; set; }
+        public ICollection<FavouriteCourses> favourite_course { get; set; }
 
         [Required(ErrorMessage = "Возраст не может быть пустым")]
         public int age { get; set; }

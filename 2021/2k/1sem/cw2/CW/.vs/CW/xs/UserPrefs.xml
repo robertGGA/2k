@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{1B30AC91-9B11-4710-B349-93728C13B8A4}|Default">
+  <MonoDevelop.Ide.ItemProperties.CW.macOS FirstBuild="True" PreferredExecutionTarget="Test1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CW/CW.macOS/AppDelegate.cs">
+    <Files>
+      <File FileName="CW/CW.macOS/AppDelegate.cs" Line="12" Column="30" />
+      <File FileName="CW/CW.macOS/Info.plist" />
+      <File FileName="CW/CW.macOS/Main.cs" Line="10" Column="74" />
+      <File FileName="CW/CW.macOS/ViewController.cs" Line="6" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CW" expanded="True">
+            <Node name="CW.macOS" expanded="True">
+              <Node name="Packages" expanded="True" />
+              <Node name="AppDelegate.cs" selected="True" />
+              <Node name="ViewController.cs" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CW.iOS FirstBuild="True" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.62691D4A-0427-4FAC-9D28-A4D99D56F38F" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

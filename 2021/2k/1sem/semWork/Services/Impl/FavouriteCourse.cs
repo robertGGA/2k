@@ -34,14 +34,9 @@ namespace semWork.Services.Impl
 
         public Boolean IsExists(int courseId, int userId)
         {
-            try
-            {
-                var course = GetCourseByUserIdAndCourseId(courseId, userId);
-                return true;
-            } catch(Exception e)
-            {
-                return false;
-            }
+            return GetCourseByUserIdAndCourseId(courseId, userId) == null ? false : true;
+
+
         }
 
         public void DeleteFavouriteCourse(FavouriteCourses favouriteCourse)
@@ -52,11 +47,11 @@ namespace semWork.Services.Impl
             context.SaveChanges();
         }
 
-        public FavouriteCourses AddFavouriteCourse(FavouriteCourses favourite_courses)
+        public void AddFavouriteCourse(FavouriteCourses favcourse)
         {
-            context.Add(favourite_courses);
+            context.Attach(favcourse);
+            context.Add(favcourse);
             context.SaveChanges();
-            return favourite_courses;
         }
     }
 }

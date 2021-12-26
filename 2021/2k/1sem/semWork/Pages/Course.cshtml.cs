@@ -131,6 +131,7 @@ namespace semWork.Pages
                 using (StreamReader reader = new StreamReader(stream))
                 {
                     string requestBody = reader.ReadToEnd();
+                  
                     if (requestBody.Length > 0)
                     {
                         var obj = JsonConvert.DeserializeObject<CommentWrapper>(requestBody);
@@ -166,9 +167,9 @@ namespace semWork.Pages
         {
             course = _db.GetCourseById(id);
             comments = _dbcom.getCommentsByCourseID(course).ToList();
-            comments.Reverse();
             return new JsonResult(comments);
         }
+ 
 
         public IActionResult OnPost()
         {

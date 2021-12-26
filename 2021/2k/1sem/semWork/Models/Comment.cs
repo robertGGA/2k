@@ -8,8 +8,11 @@ namespace semWork.Models
     {
         [Key]
         public int comment_id { get; set; }
-        public User user { get; set; }
+        [Required]
+        public virtual User user { get; set; }
+        [Required]
         public Course course { get; set; }
+        [Required]
         public string commenttext { get; set; }
 
         public Comment()

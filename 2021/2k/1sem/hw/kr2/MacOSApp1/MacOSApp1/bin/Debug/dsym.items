@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_AppExtensionDebugSymbolProperties Include="MacOSApp1.app">
+      <NativeExecutable>MacOSApp1</NativeExecutable>
+      <CompiledArchitectures></CompiledArchitectures>
+      <NoDSymUtil>true</NoDSymUtil>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <SymbolsList>/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/hw/kr2/MacOSApp1/MacOSApp1/obj/x86/Debug/mtouch-symbols.list</SymbolsList>
+    </_AppExtensionDebugSymbolProperties>
+  </ItemGroup>
+</Project>

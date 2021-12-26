@@ -9,11 +9,11 @@ namespace semWork.Models
     public class FavouriteCourses
     {
        [Key]
-        [Column(".fc_id")]
+        [Column("fc_id")]
         public int fc_id { get; set; }
-        [Column("user_id")]
+        [ForeignKey("user_id")]
         public User user { get; set; }
-        [Column("course_id")]
+        [ForeignKey("course_id")]
         public Course course { get; set; }
 
         public FavouriteCourses() { }

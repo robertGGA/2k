@@ -70,12 +70,12 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script>
     $.get('/Course/@Model.CourseId/comments').done(function (comments) {
-        console.log(comments);
         comments.map((comment) => {
+            console.log(comment);
             let item = `<li class="comment">
-                    <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
+                    <img src="${comment.user.photo}" height="45" width="45" alt="userAvatar" />
                     <div class="comment_info_container">
-                        <p class="user_title">@Model.user.login</p>
+                        <p class="user_title">${comment.user.login}</p>
                         <p class="comment_info">
                             ${comment.commenttext}
                         </p>
@@ -85,7 +85,7 @@
         });
     });
     jQuery(document).ready(function ($) {
-        
+
         $(document).on("click", "#addComment", function (e) {
             event.preventDefault();
             let searchValue = $("#commentValue").val();
@@ -107,7 +107,6 @@
                 dataType: "json",
                 contentType: "application/json; charset=utf-8"
             }).done(function (data) {
-                $("body").html(result);
 
                 })
         });
@@ -129,8 +128,20 @@
                     data: JSON.stringify(data),
                     dataType: "json",
                     contentType: "application/json; charset=utf-8"
-                }).done((data) => {
-                    $("body").html(data);
+                }).done((comments) => {
+                    comments.map((comment) => {
+                        console.log(comment.user.photo);
+                        let item = `<li class="comment">
+                                <img src="${comment.user.photo}" height="45" width="45" alt="userAvatar" />
+                                <div class="comment_info_container">
+                                    <p class="user_title">${comment.user.login}</p>
+                                    <p class="comment_info">
+                                        ${comment.commenttext}
+                                    </p>
+                                </div>
+                            </li>`;
+                        $('#comment-list').append(item);
+                    });
 
                 }).error(() => {
                     alert("error");
