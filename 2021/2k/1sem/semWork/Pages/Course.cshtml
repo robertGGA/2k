@@ -12,7 +12,10 @@
                     <div class="course_first_row">
                         <h2>@Model.courseName</h2>
 
-                         <button id="toFav" class="button_like">
+
+                        
+                        <i onclick="like(this)" class="fa fa-thumbs-up"></i>
+                        <button id="toFav" class="button_like">
                             <?xml version="1.0" ?>
                             <svg width="640" height="480" viewbox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
                                 <title>Small red heart with transparent background</title>
@@ -38,18 +41,18 @@
 
         <ul class="comments_container" id="comment-list">
             @*@if (Model.comments != null)
-            {
-                @foreach (var comment in Model.comments)
                 {
-                <li class="comment">
-                    <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
-                    <div class="comment_info_container">
-                        <p class="user_title">@Model.user.login</p>
-                        <p class="comment_info">
-                            @comment.commenttext
-                        </p>
-                    </div>
-                </li>}}*@
+                    @foreach (var comment in Model.comments)
+                    {
+                    <li class="comment">
+                        <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
+                        <div class="comment_info_container">
+                            <p class="user_title">@Model.user.login</p>
+                            <p class="comment_info">
+                                @comment.commenttext
+                            </p>
+                        </div>
+                    </li>}}*@
             <li id="display_comment" class="add_comment">
                 @*<form id="addComment" method="post">*@
                 <input id="commentValue" type="text" autocomplete="off" asp-for="comment" class="add_comment_area" placeholder="Ваш комментарий" />
@@ -84,8 +87,8 @@
             $('#comment-list').append(item);
         });
     });
-    jQuery(document).ready(function ($) {
 
+    jQuery(document).ready(function ($) {
         $(document).on("click", "#addComment", function (e) {
             event.preventDefault();
             let searchValue = $("#commentValue").val();
@@ -106,9 +109,19 @@
                 data: JSON.stringify(data),
                 dataType: "json",
                 contentType: "application/json; charset=utf-8"
-            }).done(function (data) {
-
-                })
+            }).done(function (comment) {
+                $("#commentValue").val('');
+                    let item = `<li class="comment">
+                                <img src="${comment[0]}" height="45" width="45" alt="userAvatar" />
+                                <div class="comment_info_container">
+                                    <p class="user_title">${comment[1]}</p>
+                                    <p class="comment_info">
+                                        ${comment[2]}
+                                    </p>
+                                </div>
+                            </li>`;
+                    $('#comment-list').append(item);
+            });
         });
 
         $(document).on('click', "#toFav", function (e) {
@@ -128,21 +141,8 @@
                     data: JSON.stringify(data),
                     dataType: "json",
                     contentType: "application/json; charset=utf-8"
-                }).done((comments) => {
-                    comments.map((comment) => {
-                        console.log(comment.user.photo);
-                        let item = `<li class="comment">
-                                <img src="${comment.user.photo}" height="45" width="45" alt="userAvatar" />
-                                <div class="comment_info_container">
-                                    <p class="user_title">${comment.user.login}</p>
-                                    <p class="comment_info">
-                                        ${comment.commenttext}
-                                    </p>
-                                </div>
-                            </li>`;
-                        $('#comment-list').append(item);
-                    });
-
+                }).done((comment) => {
+                    
                 }).error(() => {
                     alert("error");
                 });
@@ -182,6 +182,7 @@
     };*@
 
 @section Styles {
-    <link rel="stylesheet" href="../../css/course.css">
+    <link rel="stylesheet" href="../../css/course.css" />
     <link rel="stylesheet" href="../../css/mainPage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 }

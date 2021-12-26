@@ -155,9 +155,9 @@ namespace semWork.Pages
 
             List<string> lstString = new List<string>
                 {
-                    text,
-                    user,
-                    course
+                    currentUser.photo,
+                    currentUser.login,
+                    text
                 };
             return new JsonResult(lstString);
 
@@ -167,6 +167,7 @@ namespace semWork.Pages
         {
             course = _db.GetCourseById(id);
             comments = _dbcom.getCommentsByCourseID(course).ToList();
+            comments.Reverse();
             return new JsonResult(comments);
         }
  
