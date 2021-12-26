@@ -18,7 +18,7 @@
 }
 
 .user_info {
-    margin: 15px 0 0 60px;
+    margin-top: 15px;
 }
 
 .li_courses {
@@ -73,6 +73,8 @@
 
 .image_loader {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .button_logout {
@@ -82,4 +84,25 @@
     font-size: 15px;
     background-color: #93b0d0;
     color: white;
+}
+
+.img_uploader {
+    display: flex;
+}
+
+.container-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.img_submit {
+    padding: 3px 6px;
+    background-color: #93b0d0;
+    color: white;
+}
+
+.container-info-column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
 }

@@ -36,20 +36,20 @@
             </div>
         </div>
 
-        <ul class="comments_container">
-            @if (Model.comments != null)
+        <ul class="comments_container" id="comment-list">
+            @*@if (Model.comments != null)
             {
-@foreach (var comment in Model.comments)
-{
-<li class="comment">
-    <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
-    <div class="comment_info_container">
-        <p class="user_title">@Model.user.login</p>
-        <p class="comment_info">
-            @comment.commenttext
-        </p>
-    </div>
-</li>}            }
+                @foreach (var comment in Model.comments)
+                {
+                <li class="comment">
+                    <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
+                    <div class="comment_info_container">
+                        <p class="user_title">@Model.user.login</p>
+                        <p class="comment_info">
+                            @comment.commenttext
+                        </p>
+                    </div>
+                </li>}}*@
             <li id="display_comment" class="add_comment">
                 @*<form id="addComment" method="post">*@
                 <input id="commentValue" type="text" autocomplete="off" asp-for="comment" class="add_comment_area" placeholder="Ваш комментарий" />
@@ -69,7 +69,23 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script>
+    $.get('/Course/@Model.CourseId/comments').done(function (comments) {
+        console.log(comments);
+        comments.map((comment) => {
+            let item = `<li class="comment">
+                    <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
+                    <div class="comment_info_container">
+                        <p class="user_title">@Model.user.login</p>
+                        <p class="comment_info">
+                            ${comment.commenttext}
+                        </p>
+                    </div>
+                </li>`;
+            $('#comment-list').append(item);
+        });
+    });
     jQuery(document).ready(function ($) {
+        
         $(document).on("click", "#addComment", function (e) {
             event.preventDefault();
             let searchValue = $("#commentValue").val();
@@ -91,7 +107,8 @@
                 dataType: "json",
                 contentType: "application/json; charset=utf-8"
             }).done(function (data) {
-                alert("added by ajax")
+                $("body").html(result);
+
                 })
         });
 
@@ -113,7 +130,8 @@
                     dataType: "json",
                     contentType: "application/json; charset=utf-8"
                 }).done((data) => {
-                    alert(data)
+                    $("body").html(data);
+
                 }).error(() => {
                     alert("error");
                 });

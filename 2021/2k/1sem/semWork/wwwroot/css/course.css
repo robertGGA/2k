@@ -79,10 +79,12 @@
 }
 
 .add_comment {
+    display: flex;
     margin-top: 15px;
-    min-height: 80px;
+    min-height: 50px;
     max-height: 150px;
     list-style-type: none;
+    margin-bottom: 10px;
 }
 
 .add_comment_area {
@@ -93,6 +95,7 @@
 }
 
 .button_comment {
+    display: flex;
     min-height: 40px;
     width: 80px;
     color: white;

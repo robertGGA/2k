@@ -25,17 +25,15 @@
                     <input type="submit" class="img_submit"/>
                 </form>
             </div>
-            <div class="container-info">
-                <div class="container-info-column">
-                    <h2 class="username_title">
-                        @Model.name
-                    </h2>
+            <div>
+                <h2 class="username_title">
+                    @Model.name;
+                </h2>
 
-                    <div class="user_info">
-                        <p>
-                            <b> Полных лет: @Model.age
-                        </p>
-                    </div>
+                <div class="user_info">
+                    <p>
+                        <b> Полных лет: @Model.age;
+                    </p>
                 </div>
 
                 <form asp-page-handler="LogOut" c>

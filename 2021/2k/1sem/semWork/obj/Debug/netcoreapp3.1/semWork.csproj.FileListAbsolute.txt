@@ -122,8 +122,6 @@
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/semWork.RazorAssemblyInfo.cache
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/semWork.RazorAssemblyInfo.cs
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/staticwebassets/semWork.StaticWebAssets.Manifest.cache
-/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/staticwebassets/semWork.StaticWebAssets.xml
-/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/scopedcss/bundle/semWork.styles.css
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/semWork.TagHelpers.input.cache
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/semWork.TagHelpers.output.cache
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/semWork.RazorCoreGenerate.cache

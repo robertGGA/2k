@@ -162,6 +162,14 @@ namespace semWork.Pages
 
         }
 
+        public JsonResult OnGetComments(int id)
+        {
+            course = _db.GetCourseById(id);
+            comments = _dbcom.getCommentsByCourseID(course).ToList();
+            comments.Reverse();
+            return new JsonResult(comments);
+        }
+
         public IActionResult OnPost()
         {
             return Redirect("/Course");
