@@ -7,7 +7,7 @@ namespace semWork.Models
     public class Lessons
     {
         [Key]
-        public int lessonId { get; set; }
+        public int lesson_id { get; set; }
         public Course course { get; set; }
         public string description { get; set; }
         public string page { get; set; }

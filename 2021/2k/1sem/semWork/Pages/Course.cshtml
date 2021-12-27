@@ -12,56 +12,41 @@
                     <div class="course_first_row">
                         <h2>@Model.courseName</h2>
 
+                        @*<button id="toFav" class="button_like">
+            <?xml version="1.0" ?>
+            <svg width="640" height="480" viewbox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+                <title>Small red heart with transparent background</title>
+                <g>
+                    <title>Layer 1</title>
+                    <g id="layer1">
+                        <path id="svg_2" d="m219.28949,21.827393c-66.240005,0 -119.999954,53.76001 -119.999954,120c0,134.755524 135.933151,170.08728 228.562454,303.308044c87.574219,-132.403381 228.5625,-172.854584 228.5625,-303.308044c0,-66.23999 -53.759888,-120 -120,-120c-48.047913,0 -89.401611,28.370422 -108.5625,69.1875c-19.160797,-40.817078 -60.514496,-69.1875 -108.5625,-69.1875z" />
+                    </g>
+                </g>
+            </svg>
+        </button>*@
 
-                        
-                        <i onclick="like(this)" class="fa fa-thumbs-up"></i>
-                        <button id="toFav" class="button_like">
-                            <?xml version="1.0" ?>
-                            <svg width="640" height="480" viewbox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                                <title>Small red heart with transparent background</title>
-                                <g>
-                                    <title>Layer 1</title>
-                                    <g id="layer1">
-                                        <path id="svg_2" d="m219.28949,21.827393c-66.240005,0 -119.999954,53.76001 -119.999954,120c0,134.755524 135.933151,170.08728 228.562454,303.308044c87.574219,-132.403381 228.5625,-172.854584 228.5625,-303.308044c0,-66.23999 -53.759888,-120 -120,-120c-48.047913,0 -89.401611,28.370422 -108.5625,69.1875c-19.160797,-40.817078 -60.514496,-69.1875 -108.5625,-69.1875z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </button>
+                        <button id="toFav" class="heart-like-button"></button>
                     </div>
 
                     <p class="p_info">Оценка:</p>
 
                     <h3 class="subtitle_course">@Model.description</h3>
                 </div>
-                <a class="button_submit" asp-page="/Lesson">
+                <a class="button_submit" asp-page="/Lesson" asp-route-id="@Model.CourseId">
                     Просмотреть
                 </a>
             </div>
         </div>
 
         <ul class="comments_container" id="comment-list">
-            @*@if (Model.comments != null)
-                {
-                    @foreach (var comment in Model.comments)
-                    {
-                    <li class="comment">
-                        <img src="@Model.user.photo" height="45" width="45" alt="userAvatar" />
-                        <div class="comment_info_container">
-                            <p class="user_title">@Model.user.login</p>
-                            <p class="comment_info">
-                                @comment.commenttext
-                            </p>
-                        </div>
-                    </li>}}*@
+           
             <li id="display_comment" class="add_comment">
-                @*<form id="addComment" method="post">*@
+                
                 <input id="commentValue" type="text" autocomplete="off" asp-for="comment" class="add_comment_area" placeholder="Ваш комментарий" />
-                @*<input id="addComment" type="submit" class="button_comment" />*@
-                <button id="addComment" type="submit" class="button_comment" asp-page-handler="CreateComment" asp-route-id="@Model.CourseId">
-                </button>
+                <button id="addComment" type="submit" class="button_comment" asp-page-handler="CreateComment" asp-route-id="@Model.CourseId"></button>
                 <input type="hidden" value="@Model.CourseId" asp-for="CourseId" />
                 <input type="hidden" value="@Model.user.user_id" asp-for="user" />
-                @*</form>*@
+     
             </li>
         </ul>
 
@@ -125,6 +110,11 @@
         });
 
         $(document).on('click', "#toFav", function (e) {
+            if (e.classList.contains("liked")) {
+                e.classList.remove("liked");
+            } else {
+                e.classList.add("liked");
+            }
             const data = {
                 CourseId: @(Model.CourseId),
                 UserId: @(Model.user.user_id)
@@ -150,36 +140,7 @@
     });
 
 
-
-    @*jQuery(function () {
-        jQuery("#output").html("working...");
-        jQuery.ajax({
-            type: "get",
-            url: "Course",
-            dataType: "html"
-        }).done(function (result) {
-            jQuery("#output").html(result);
-        });
-
-
-    });*@
 </script>
-
-
-@*completed = () => {
-        $.ajax({
-            type: "POST",
-            url: '/Course/@Model.id',
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("XSRF-TOKEN",
-                    $('input:hidden[name="__RequestVerificationToken"]').val());
-            },
-        }).done(function (data) {
-            console.log(data.result);
-        })
-    };*@
 
 @section Styles {
     <link rel="stylesheet" href="../../css/course.css" />

@@ -1,6 +1,5 @@
 @*@page "/Course/{id:int?}/lesson/{page:int?}"*@
-@*@page "/lesson/{id:int}"*@
-@page
+@page "/Lesson/{id:int}/{handler?}"
 @model semWork.Pages.LessonModel
 @{ ViewData["Title"] = "Lesson"; }
 
@@ -11,23 +10,52 @@
                 Тема урока
             </h1>
             <div class="container_of_lesson">
-                <iframe class="video_settings"
-                        src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                </iframe>
+                <div id="container">
+                    <iframe class="video_settings"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                    </iframe>
+                </div>
 
                 <div class="back-front">
-                    <a href="" class="arrows">
+                    <button id="prevLesson" href="" class="arrows">
                         Предыдущий
-                    </a>
-                    <a href="" class="arrows">
+                    </button>
+                    <button id="nextLesson" href="" class="arrows">
                         Следующий
-                    </a>
+                    </button>
 
                 </div>
             </div>
         </div>
     </div>
 </main>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script>
+    jQuery(document).ready(function ($) {
+        $(document).on("click", "#nextLesson", function (e) {
+            event.preventDefault();
+
+            $.get("/Lesson/@Model.course/nextpage").done(function (lesson) {
+
+                $(".video_settings").remove();
+                let item = `<iframe class="video_settings"
+                                    src="${lesson.page}">
+                            </iframe>`;
+                $('#container').append(item);
+            });
+        });
+
+
+        $(document).on("click", "#prevLesson", function (e) {
+            event.preventDefault();
+
+            $.get("/Lesson/@Model.course/prevpage").done(function (data) {
+                alert(data);
+            });
+        });
+    });
+</script>
 
 @section Styles {
     <link rel="stylesheet" href="../../css/lesson.css">
