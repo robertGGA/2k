@@ -22,7 +22,7 @@
 
                 <form class="image_loader" method="post" enctype="multipart/form-data">
                     <input type="file" asp-for="Photo" />
-                    <input type="submit" class="img_submit"/>
+                    <input type="submit" class="img_submit" />
                 </form>
             </div>
             <div class="container-info">
@@ -38,45 +38,49 @@
                     </div>
                 </div>
 
-                <form asp-page-handler="LogOut" c>
+                <form asp-page-handler="LogOut">
                     <button class="button_logout">
                         Выйти
                     </button>
                 </form>
 
+                <a asp-page="/Settings" > 
+                    Настройки
+                </a>
 
-                <div class="courses_container">
-                    @if (Model.Courses != null)
-                        {
-            <h2>
-                Любимые курсы
-            </h2>
 
-                            <ul class="li_courses">
-                                @foreach (var course in Model.Courses)
-                                {
-                                    <li class="item_courses">
-                                        <img src="@course.photo" width="50px" height="50px" />
-                                        <div class="column_item">
-                                            <a href="#" class="label_of_item_course">
-                                                @course.name;
-                                            </a>
-                                            <p class="item_course_desc">
-                                                @course.description;
-                                            </p>
-                                        </div>
-                                    </li>
-                                }
-                            </ul> }
-                                        else
-                                        {
-                                            <h2>
-                                                Нет любимых курсов
-                                            </h2>
-                                        }
 
-                </div>
             </div>
+        </div>
+        <div class="courses_container">
+            @if (Model.Courses != null)
+            {
+    <h2>
+        Любимые курсы
+    </h2>
+
+    <ul class="li_courses">
+        @foreach (var course in Model.Courses)
+        {
+                        <li class="item_courses">
+                            <img src="@course.photo" width="50px" height="50px" />
+                            <div class="column_item">
+                                <a style="color: black" asp-area="" asp-page="/Course" asp-route-id="@course.course_id">
+                                    @course.name;
+                                </a>
+                                <p class="item_course_desc">
+                                    @course.description;
+                                </p>
+                            </div>
+                        </li>
+        }
+    </ul> }
+                else
+                {
+    <h2>
+        Нет любимых курсов
+    </h2>}
+
         </div>
     </div>
 </div>

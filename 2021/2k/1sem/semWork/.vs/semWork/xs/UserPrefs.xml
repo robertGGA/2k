@@ -1,49 +1,20 @@
 ﻿<Properties StartupConfiguration="{176A7154-5209-4524-9EC1-247293985A34}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/User.cshtml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Settings.cshtml.cs">
     <Files>
-      <File FileName="Pages/Course.cshtml.cs" Line="83" Column="1" IsPinned="True" />
-      <File FileName="Models/Comment.cs" Line="12" Column="23" />
-      <File FileName="dto/CommentWrapper.cs" Line="1" Column="1" />
-      <File FileName="Pages/Course.cshtml" Line="72" Column="13" />
-      <File FileName="Services/Impl/CommentRepository.cs" Line="28" Column="10" />
-      <File FileName="Models/User.cs" Line="18" Column="1" />
-      <File FileName="Services/Impl/UserRepository.cs" />
-      <File FileName="Startup.cs" Line="40" Column="67" />
+      <File FileName="Pages/Settings.cshtml.cs" Line="31" Column="1" />
+      <File FileName="dto/UserWrapper.cs" />
+      <File FileName="dto/FavCoursesWrapper.cs" />
+      <File FileName="Pages/Settings.cshtml" />
       <File FileName="Services/Interfaces/IUserRepository.cs" />
-      <File FileName="Models/FavouriteCourses.cs" Line="12" Column="18" />
-      <File FileName="dto/FavCoursesWrapper.cs" Line="1" Column="1" />
-      <File FileName="Services/Interfaces/IFavouriteCourses.cs" />
-      <File FileName="Services/Impl/CourseRepository.cs" />
-      <File FileName="Services/Impl/LessonRepository.cs" Line="26" Column="1" />
-      <File FileName="Models/Course.cs" Line="1" Column="1" />
-      <File FileName="Data/FuLearnContext.cs" Line="1" Column="1" />
-      <File FileName="Models/SubLessons.cs" />
-      <File FileName="Models/Rate.cs" />
-      <File FileName="Models/Lessons.cs" Line="10" Column="29" />
-      <File FileName="Services/Impl/FavouriteCourse.cs" Line="55" Column="1" />
-      <File FileName="Pages/Lesson.cshtml" Line="40" Column="1" />
-      <File FileName="Pages/Lesson.cshtml.cs" Line="56" Column="1" />
-      <File FileName="Pages/Shared/_Layout.cshtml" Line="41" Column="28" />
-      <File FileName="wwwroot/css/lesson.css" />
-      <File FileName="Pages/Courses.cshtml.cs" Line="1" Column="1" />
-      <File FileName="Pages/Courses.cshtml" Line="43" Column="116" />
-      <File FileName="Pages/Lesson.cshtml~" />
-      <File FileName="Pages/Course.cshtml~" />
-      <File FileName="Services/Interfaces/ILessonRepository.cs" Line="1" Column="1" />
-      <File FileName="Services/Interfaces/ICourseRepository.cs" />
-      <File FileName="Pages/LoginPage.cshtml" />
-      <File FileName="Pages/LoginPage.cshtml.cs" />
-      <File FileName="Pages/_ViewStart.cshtml" />
-      <File FileName="Pages/User.cshtml" Line="1" Column="1" />
-      <File FileName="wwwroot/css/profilePage.css" />
-      <File FileName="wwwroot/css/course.css" Line="161" Column="2" />
-      <File FileName="Models/Comment.cs~" Line="1" Column="1" />
-      <File FileName="Pages/Index.cshtml" Line="1" Column="1" />
-      <File FileName="Pages/Index.cshtml.cs" Line="17" Column="32" />
-      <File FileName="Models/User.cs~" Line="1" Column="1" />
-      <File FileName="Services/Interfaces/IFavouriteCourses.cs~" Line="1" Column="1" />
-      <File FileName="Pages/RegPage.cshtml" Line="1" Column="1" />
-      <File FileName="Pages/User.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Services/Impl/UserRepository.cs~" />
+      <File FileName="Services/Impl/UserRepository.cs" />
+      <File FileName="Pages/User.cshtml.cs" />
+      <File FileName="wwwroot/css/settings.css" />
+      <File FileName="Pages/RegPage.cshtml" />
+      <File FileName="Pages/RegPage.cshtml.cs" />
+      <File FileName="Pages/Course.cshtml.cs" />
+      <File FileName="Pages/Course.cshtml" />
+      <File FileName="Pages/Courses.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -51,6 +22,7 @@
           <Node name="semWork" expanded="True">
             <Node name="semWork" expanded="True">
               <Node name="Data" expanded="True" />
+              <Node name="dto" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
                 <Node name="Shared" expanded="True" />
@@ -58,9 +30,11 @@
                 <Node name="Courses.cshtml" expanded="True" />
                 <Node name="Index.cshtml" expanded="True" />
                 <Node name="Lesson.cshtml" expanded="True" />
-                <Node name="User.cshtml" expanded="True">
-                  <Node name="User.cshtml.cs" selected="True" />
+                <Node name="RegPage.cshtml" expanded="True" />
+                <Node name="Settings.cshtml" expanded="True">
+                  <Node name="Settings.cshtml.cs" selected="True" />
                 </Node>
+                <Node name="User.cshtml" expanded="True" />
               </Node>
               <Node name="Services" expanded="True">
                 <Node name="Impl" expanded="True" />
@@ -80,16 +54,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/User.cshtml.cs" relfile="Pages/User.cshtml.cs" line="82" column="1" />
-      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/User.cshtml.cs" relfile="Pages/User.cshtml.cs" line="98" column="1" />
-      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/Course.cshtml.cs" relfile="Pages/Course.cshtml.cs" line="83" column="1" />
-      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Services/Impl/FavouriteCourse.cs" relfile="Services/Impl/FavouriteCourse.cs" line="53" column="1" />
-      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/Course.cshtml.cs" relfile="Pages/Course.cshtml.cs" line="107" column="1" />
-      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/Course.cshtml.cs" relfile="Pages/Course.cshtml.cs" line="113" column="1" />
-      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/Course.cshtml.cs" relfile="Pages/Course.cshtml.cs" line="104" column="1" />
+      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/User.cshtml.cs" relfile="Pages/User.cshtml.cs" line="85" column="1" />
+      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/User.cshtml.cs" relfile="Pages/User.cshtml.cs" line="101" column="1" />
       <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/Lesson.cshtml.cs" relfile="Pages/Lesson.cshtml.cs" line="73" column="1" />
       <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/Lesson.cshtml.cs" relfile="Pages/Lesson.cshtml.cs" line="49" column="1" />
       <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/Lesson.cshtml.cs" relfile="Pages/Lesson.cshtml.cs" line="56" column="1" />
+      <Breakpoint file="/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/Pages/Settings.cshtml.cs" relfile="Pages/Settings.cshtml.cs" line="30" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

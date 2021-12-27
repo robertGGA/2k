@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
+using semWork.Models;
+
+namespace semWork.Pages
+{
+    public class SettingsModel : PageModel
+    {
+        public void OnGet()
+        {
+
+        }
+
+        public ActionResult OnPostChangeUserParams()
+        {
+            string text = "";
+            string user = "";
+            string course = "";
+            {
+                MemoryStream stream = new MemoryStream();
+                Request.Body.CopyTo(stream);
+                stream.Position = 0;
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string requestBody = reader.ReadToEnd();
+
+                    if (requestBody.Length > 0)
+                    {
+                        var obj = JsonConvert.DeserializeObject<CommentWrapper>(requestBody);
+                        if (obj != null)
+                        {
+                            text = obj.Text;
+                            user = obj.UserId;
+                            course = obj.CourseId;
+                        }
+                    }
+                }
+            }
+            User currentUser = _userdb.getUserByID(int.Parse(user));
+            //this.user = currentUser;
+            //this.course = course;
+
+            _dbcom.addComment(localComment);
+            comments.Add(localComment);
+
+            List<string> lstString = new List<string>
+                {
+                    currentUser.photo,
+                    currentUser.login,
+                    text
+                };
+            return new JsonResult(lstString);
+        }
+    }
+}

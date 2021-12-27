@@ -66,18 +66,5 @@ namespace semWork.Services.Impl
                 return false;
             }
         }
-
-        public void UpdateUserInfo(User user)
-        {
-            try
-            {
-                context.Update(user);
-                context.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                throw;
-            }
-        }
     }
 }

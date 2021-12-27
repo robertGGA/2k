@@ -199,3 +199,4 @@
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/Razor/Pages/Courses.cshtml.g.cs
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/Razor/Pages/Course.cshtml.g.cs
 /Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/Razor/Pages/Lesson.cshtml.g.cs
+/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/1sem/semWork/obj/Debug/netcoreapp3.1/Razor/Pages/Settings.cshtml.g.cs

@@ -30,18 +30,16 @@ namespace semWork.Pages.Users
         public List<Course> Courses;
         private readonly IUserRepository _db;
         private readonly ICourseRepository _dbCourse;
-        private readonly IFavouriteCourses _fvCourse;
         
         public int id;
         
         private readonly IHostingEnvironment _environment;
 
-        public UserModel (IUserRepository db, ICourseRepository dbCourse, IFavouriteCourses fvCourse,  IHostingEnvironment environment)
+        public UserModel (IUserRepository db, IHostingEnvironment environment)
         {
             _db = db;
             _dbCourse = dbCourse;
             _environment = environment;
-            _fvCourse = fvCourse;
         }
 
         public void OnGet()
@@ -53,20 +51,19 @@ namespace semWork.Pages.Users
             }
             else
             {
-                Courses = new List<Course>();
+ 
                 id = Convert.ToInt32(Request.Cookies["Id"]);
 
                 user = _db.getUserByID(id);
                 name = user.login;
                 age = user.age;
 
-                var favCourses = _fvCourse.GetCoursesListByUserId(user.user_id);
-                
+                var favCourses = currentUser.favourite_course;
                 if (favCourses != null)
                 {
                     foreach (var course in favCourses)
                     {
-                        Courses.Add(_dbCourse.GetCourseById(course.course.course_id));
+                        Courses.Add(_dbCourse.GetCourseById(course.course_id.course_id));
                     }
                 }
             }

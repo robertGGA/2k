@@ -1,0 +1,53 @@
+﻿.settings-container {
+    margin-top: 25px;
+    display: inherit;
+    flex-direction: column;
+    background-color: #dee8ec;
+    padding: 25px 20px;
+    min-height: 560px;
+    max-height: 100%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input {
+    display: flex;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.first-container-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-example {
+    display: flex;
+    min-width: 200px;
+    max-width: 350px;
+    height: 35px;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 35px;
+    text-align: center;
+}
+
+.submit-button {
+    background-color: #eacc97;
+    padding: 0 10px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin-top: 20px;
+    max-width: 130px;
+}

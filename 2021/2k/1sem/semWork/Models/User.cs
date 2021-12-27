@@ -13,7 +13,8 @@ namespace semWork.Models
         public string login { get; set; }
         [Required]
 
-        [RegularExpression("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", ErrorMessage = "Пароль должен содержать как минимум 8 символов, 1 букву и 1 число")]
+        [RegularExpression("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8, 20}$", ErrorMessage = "Пароль должен содержать как минимум 8 символов, 1 букву и 1 число")]
+
         public string password { get; set; }
 
         public ICollection<FavouriteCourses> favourite_course { get; set; }

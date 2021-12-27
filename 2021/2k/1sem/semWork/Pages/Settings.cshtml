@@ -1,0 +1,68 @@
+@page "/Settings/{handler?}"
+@model semWork.Pages.SettingsModel
+@Html.AntiForgeryToken()
+@{ ViewData["Title"] = "Settings"; }
+
+<div class="first_container first-container-wrapper">
+    <h1>
+        Настройки аккаунта
+    </h1>
+    <div class="settings-container">
+        <h2>Изменить данные</h2>
+        <form class="form-container">
+            <label for="login">
+                Логин
+            </label>
+            <input class="input-example" id="login" type="text" />
+            <label for="password">
+                Пароль
+            </label>
+            <input class="input-example" id="password" type="password" />
+            <label for="age">
+                Возраст
+            </label>
+            <input class="input-example" id="age" type="number" min="4" max="100" />
+            <input type="submit" class="submit-button" placeholder="Изменить" />
+        </form>
+
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>const form = document.querySelector('.form-container');
+    const login = document.querySelector('#login');
+    const pass = document.querySelector('#password');
+    const age = document.querySelector('#age');
+    const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log(reg.test(pass.value))
+        console.log(pass.value)
+        if (login.value.lenght != "" && reg.test(pass.value)) {
+            const data = {
+                Login: login.value,
+                Password: pass.value,
+                Age: age.value
+            }
+
+
+            $.ajax({
+                type: "POST",
+                url: '/Settings?handler=ChangeUserParams',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8"
+            }).done(function (comment) {
+                alert('done!');
+            });
+        }
+    });</script>
+
+@section Styles {
+    <link rel="stylesheet" href="../../css/settings.css">
+    <link rel="stylesheet" href="../../css/mainPage.css" />
+}

@@ -4,6 +4,7 @@ using semWork.Data;
 using semWork.Models;
 using semWork.Services.Interfaces;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace semWork.Services.Impl
 {
@@ -26,9 +27,10 @@ namespace semWork.Services.Impl
 
         public IEnumerable<FavouriteCourses> GetCoursesListByUserId(int id)
         {
-            var favCourses = (from favCourse in context.favourite_courses
-                              where favCourse.course.course_id == id
-                            select favCourse).ToList();
+            var favCourses = context.favourite_courses
+                            .Where(b => b.user.user_id == id)
+                            .Include(b => b.course).ToList();
+
             return favCourses;
         }
 

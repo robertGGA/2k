@@ -43,7 +43,7 @@
             <li id="display_comment" class="add_comment">
                 
                 <input id="commentValue" type="text" autocomplete="off" asp-for="comment" class="add_comment_area" placeholder="Ваш комментарий" />
-                <button id="addComment" type="submit" class="button_comment" asp-page-handler="CreateComment" asp-route-id="@Model.CourseId"></button>
+                <button id="addComment" type="submit" class="button_comment" asp-page-handler="CreateComment" asp-route-id="@Model.CourseId">Добавить</button>
                 <input type="hidden" value="@Model.CourseId" asp-for="CourseId" />
                 <input type="hidden" value="@Model.user.user_id" asp-for="user" />
      
@@ -110,11 +110,6 @@
         });
 
         $(document).on('click', "#toFav", function (e) {
-            if (e.classList.contains("liked")) {
-                e.classList.remove("liked");
-            } else {
-                e.classList.add("liked");
-            }
             const data = {
                 CourseId: @(Model.CourseId),
                 UserId: @(Model.user.user_id)
