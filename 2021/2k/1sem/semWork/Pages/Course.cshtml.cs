@@ -20,6 +20,7 @@ namespace semWork.Pages
         private readonly ICommentRepository _dbcom;
         private readonly IUserRepository _userdb;
         private readonly IFavouriteCourses _favdb;
+        private readonly IRateRepository _ratedb;
 
         [BindProperty]
         public string courseName { get; set; }
@@ -51,15 +52,19 @@ namespace semWork.Pages
         [BindProperty]
         public bool isFavourite { get; set; }
 
+        [BindProperty]
+        public float avgRate { get; set; }
 
 
 
-        public CourseModel(ICourseRepository db, ICommentRepository dbcom, IUserRepository userdb, IFavouriteCourses favdb)
+
+        public CourseModel(ICourseRepository db, ICommentRepository dbcom, IUserRepository userdb, IFavouriteCourses favdb, IRateRepository ratedb)
         {
             _db = db;
             _dbcom = dbcom;
             _userdb = userdb;
             _favdb = favdb;
+            _ratedb = ratedb;
         }
 
 
@@ -77,6 +82,15 @@ namespace semWork.Pages
             courseName = course.name;
             user = _userdb.getUserByID(int.Parse(HttpContext.Request.Cookies["Id"]));
             comments = _dbcom.getCommentsByCourseID(course).ToList();
+            List<Rate> rating = _ratedb.GetRatesByCourse(course).ToList();
+            if(rating.Count == 0)
+            {
+                avgRate = 0;
+            } else
+            {
+                avgRate = rating.Sum(item => item.rate) / rating.Count();
+            }
+            
         }
 
         public ActionResult OnPostAddFavCourse()
@@ -114,8 +128,61 @@ namespace semWork.Pages
                     return new JsonResult(true);
                 }
             }
+        }
 
-            
+        public ActionResult OnPostSetRate()
+        {
+            string rate = "";
+            string course = "";
+
+            {
+                MemoryStream stream = new MemoryStream();
+                Request.Body.CopyTo(stream);
+                stream.Position = 0;
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string requestBody = reader.ReadToEnd();
+
+                    if (requestBody.Length > 0)
+                    {
+                        var obj = JsonConvert.DeserializeObject<RateWrapper>(requestBody);
+                        if (obj != null)
+                        {
+                            rate = obj.Rate;
+                            course = obj.Course;
+                        }
+                    }
+                }
+
+                User currentUser = _userdb.getUserByID(int.Parse(HttpContext.Request.Cookies["Id"]));
+                //this.user = currentUser;
+                Course currentCourse = _db.GetCourseById(int.Parse(course));
+                
+                if(_ratedb.GetRateByCourseAndName(currentCourse, currentUser) != null)
+                {
+                    Rate pushRate = _ratedb.GetRateByCourseAndName(currentCourse, currentUser);
+                    pushRate.rate = int.Parse(rate);
+                    pushRate.course = currentCourse;
+                    pushRate.user = currentUser;
+                    _ratedb.UpdateRate(pushRate);
+                } else
+                {
+                    Rate pushRate = new Rate();
+                    pushRate.rate = int.Parse(rate);
+                    pushRate.course = currentCourse;
+                    pushRate.user = currentUser;
+                    _ratedb.AddRate(pushRate);
+                }
+                
+
+
+                List<string> lstString = new List<string>
+                {
+                    rate
+                };
+
+                return new JsonResult(lstString);
+            }
         }
 
         public ActionResult OnPostCreateComment()

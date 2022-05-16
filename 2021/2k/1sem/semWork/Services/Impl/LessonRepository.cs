@@ -16,6 +16,12 @@ namespace semWork.Services.Impl
             this.context = context;
         }
 
+        public void CreateLesson(Lessons lesson)
+        {
+            context.Add(lesson);
+            context.SaveChanges();
+        }
+
         public Lessons GetLessonById(int id)
         {
             return context.lessons.Find(id);

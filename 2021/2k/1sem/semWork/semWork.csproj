@@ -34,6 +34,7 @@
     <Folder Include="Services\Interfaces\" />
     <Folder Include="wwwroot\photos\" />
     <Folder Include="dto\" />
+    <Folder Include="wwwroot\photosCourses\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.0" />
@@ -53,5 +54,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\photos\" />
+    <Content Remove="wwwroot\photosCourses\borsh.jpeg" />
+    <Content Remove="wwwroot\photosCourses\game.jpeg" />
+    <Content Remove="wwwroot\photosCourses\lib1.jpeg" />
+    <Content Remove="wwwroot\photosCourses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\photosCourses\borsh.jpeg" />
+    <None Include="wwwroot\photosCourses\game.jpeg" />
+    <None Include="wwwroot\photosCourses\lib1.jpeg" />
   </ItemGroup>
 </Project>

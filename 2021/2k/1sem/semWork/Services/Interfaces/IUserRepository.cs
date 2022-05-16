@@ -11,7 +11,7 @@ namespace semWork.Services
     {
         public IEnumerable<User> GetAllUsers();
 
-        public User Add(User newUser);
+        public void Add(User newUser);
 
         public User getUserByID(int id);
 

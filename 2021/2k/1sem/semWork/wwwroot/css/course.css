@@ -97,7 +97,6 @@
 }
 
 .button_comment {
-    display: flex;
     min-height: 40px;
     width: 80px;
     color: white;
@@ -106,18 +105,18 @@
 
 .heart-like-button {
     position: relative;
-    width: 160px;
-    height: 130px;
+    width: 40px;
+    background: none;
 }
 
     .heart-like-button:before {
         position: absolute;
         top: 0;
-        left: 80px;
+        left: 19px;
         transform: rotate(-45deg);
         transform-origin: 0 100%;
-        width: 80px;
-        height: 125px;
+        width: 20px;
+        height: 35px;
         border-radius: 40px 40px 0 0;
         background-color: #574136;
         content: "";
@@ -131,8 +130,8 @@
         left: 0;
         transform: rotate(45deg);
         transform-origin: 100% 100%;
-        width: 80px;
-        height: 125px;
+        width: 20px;
+        height: 35px;
         border-radius: 40px 40px 0 0;
         background-color: #574136;
         content: "";
@@ -164,4 +163,53 @@
 .course_first_row {
     display: flex;
     justify-content: space-between;
+}
+
+
+.rating-area {
+    overflow: hidden;
+    width: 265px;
+    margin: 0 auto;
+}
+
+    .rating-area:not(:checked) > input {
+        display: none;
+    }
+
+    .rating-area:not(:checked) > label {
+        float: right;
+        width: 23px;
+        padding: 0;
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 32px;
+        color: lightgrey;
+        text-shadow: 1px 1px #bbb;
+    }
+
+        .rating-area:not(:checked) > label:before {
+            content: '★';
+        }
+
+    .rating-area > input:checked ~ label {
+        color: gold;
+        text-shadow: 1px 1px #c60;
+    }
+
+    .rating-area:not(:checked) > label:hover,
+    .rating-area:not(:checked) > label:hover ~ label {
+        color: gold;
+    }
+
+    .rating-area > input:checked + label:hover,
+    .rating-area > input:checked + label:hover ~ label,
+    .rating-area > input:checked ~ label:hover,
+    .rating-area > input:checked ~ label:hover ~ label,
+    .rating-area > label:hover ~ input:checked ~ label {
+        color: gold;
+        text-shadow: 1px 1px goldenrod;
+    }
+
+.rate-area > label:active {
+    position: relative;
 }

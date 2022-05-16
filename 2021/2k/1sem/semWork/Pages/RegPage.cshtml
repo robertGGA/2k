@@ -11,21 +11,64 @@
             <h1>Регистрация</h1>
 
             <div class="form_container">
-                <form  method="post" asp-page-handler="CreateUser" class="forms">
-                    
-                        <input class="input_form" type="text" placeholder="Login" asp-for="Login" required>
+                <form method="post" asp-page-handler="CreateUser" class="forms">
 
-                        <input class="input_form" type="password" placeholder="Password" asp-for="Password" required>
+                    <input class="input_form" type="text" placeholder="Login" asp-for="Login" required>
 
-                        <input class="input_form" type="password" placeholder="Repeat password" asp-for="ConfPassword" required>
+                    <input id="password" class="input_form" type="password" placeholder="Password" asp-for="Password" required>
+                    <div><p style="font-size: 10px; max-width: 308px;" id="error-pass">Пароль должен содержать минимум 8 символов, 1 большую букву и 1 число</p></div>
+
+                    <input id="reppassword" class="input_form" type="password" placeholder="Repeat password" asp-for="ConfPassword" required>
 
 
-                        <input class="input_form" type="text" placeholder="Кол-во полных лет" asp-for="date" required>
-                    
+                    <input id="age" class="input_form" type="number" min="10" max="100" placeholder="Кол-во полных лет" asp-for="date" required>
+                    <div><p id="error-age"></p></div>
 
-                    <input type="submit" class="button_submit" placeholder="Подтвердить">
+
+                    <input id="submit" type="submit" class="button_submit" placeholder="Подтвердить">
                 </form>
             </div>
 
         </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+        $("#input").prop('disabled', true);
+
+        $('#password').change(function () {
+            console.log('in change');
+            if ($('#password').val() == $('#reppassword').val() && reg.test($('#password').val())) {
+                $('#error-pass').text('Пароль подходит');
+                $("#input").prop('disabled', false);
+                console.log('equal');
+            } else {
+                $('#error-pass').text('Пароли не совпадают');
+                $("#input").prop('disabled', true);
+                console.log('not equal');
+            }
+        });
+
+        $('#reppassword').change(function () {
+            console.log('in change');
+            if ($('#password').val() == $('#reppassword').val() && reg.test($('#password').val())) {
+                $('#error-pass').text('Пароль подходит')
+
+                $("#input").prop('disabled', false);
+                console.log('equal');
+            } else {
+
+                $('#error-pass').text('Пароли не совпадают')
+                $("#input").prop('disabled', true);
+                console.log('not equal');
+            }
+        });
+        $('#age').change(function () {
+            if ($('#age').val() > 100 || $('age').val() < 10) {
+                $('#error-age').text('Неподходящий возраст')
+            }
+        });
+
+    });
+</script>
 

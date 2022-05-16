@@ -17,11 +17,10 @@ namespace semWork.Services.Impl
             this.context = context;
         }
 
-        public User Add(User newUser)
+        public void Add(User newUser)
         {
             context.Add(newUser);
             context.SaveChanges();
-            return newUser;
         }
 
         public IEnumerable<User> GetAllUsers()

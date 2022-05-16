@@ -1,0 +1,112 @@
+@page "/create/{handler?}"
+@model semWork.Pages.CreateCourseModel
+@{ ViewData["Title"] = "CreateCourse"; }
+
+<div class="first_container">
+    <h1>
+        Создание Курса
+    </h1>
+
+
+    <div class="content-container">
+
+        <form class="wrapper">
+            <div class="image-container">
+                <img src="" width="350px" height="350px" />
+                <input type="file"  class="upload-poster" id="photo" required />
+            </div>
+
+            <div class="info-container">
+                <label class="main-label" for="name">Название курса</label>
+                <input class="main-input" id="name" type="text" required>
+
+                <label class="description-label">Описание курса</label>
+                <textarea placeholder="Давным давно..." class="description-input" id="desc" required></textarea>
+
+                <h3 style="margin-top: 25px">
+                    Список уроков
+                </h3>
+                <div id="lesson-list">
+                    <div style="margin-top: 5px">
+                        <label>Урок #1</label>
+                        <input class="lesson-link" type="url" id="url"
+                               placeholder="https://youtube.com"
+                               pattern="https://you.*" size="70"
+                               required>
+                    </div>
+                </div>
+                <button id="generator" class="btn-add-new-lesson">Добавить урок</button>
+                <input id="createCourse" type="submit" class="create-course" value="Создать курс">
+
+            </div>
+        </form>
+
+
+
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script>
+const createLessonButton = document.getElementById('generator');
+
+    createLessonButton.addEventListener('click', (e) => {
+        console.log('clicked');
+        e.preventDefault();
+
+
+        if ($(".lesson-link").length >= 5) {
+            alert('Максимальное количество уроков - 5!')
+        } else {
+            let item = `<div style="margin-top: 5px">
+                        <label>Урок  #${$(".lesson-link").length + 1}</label>
+                        <input class="lesson-link" type="url" id="url"
+                               placeholder="https://youtube.com"
+                               pattern="https://you.*" size="70"
+                               >
+                    </div>`
+            $('#lesson-list').append(item);
+        }
+    });
+
+    $(document).on('click', "#createCourse", function (e) {
+        event.preventDefault();
+        const array = [];
+
+        $(".lesson-link").each(function () {
+            array.push($(this).val());
+        });
+
+
+
+        let nameValue = $("#name").val();
+        let descValue = $("#desc").val();
+
+
+        const data = {
+            Name: nameValue,
+            Description: descValue,
+        };
+        $.ajax({
+                type: "POST",
+                url: '/create/?handler=GenerateCourse',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8"
+            }).done(function () {
+
+            });
+    });
+
+</script>
+
+@section Styles {
+    <link rel="stylesheet" href="../../css/createCourse.css" />
+    <link rel="stylesheet" href="../../css/mainPage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+}

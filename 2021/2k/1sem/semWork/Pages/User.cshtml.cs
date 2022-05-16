@@ -46,10 +46,10 @@ namespace semWork.Pages.Users
 
         public void OnGet()
         {
-
-            if (Request.Cookies["User"] == null)
+            Console.Write(Request.Cookies["Id"]);
+            if (Request.Cookies["Id"] == null)
             {
-                Redirect("/LoginPage");
+                RedirectToPage("/LoginPage");
             }
             else
             {
@@ -120,7 +120,10 @@ namespace semWork.Pages.Users
 
         public IActionResult OnPostLogOut()
         {
-            Response.Cookies.Delete("User");
+            foreach (var cookie in HttpContext.Request.Cookies)
+            {
+                Response.Cookies.Delete(cookie.Key);
+            }
             return Redirect("/index");
         }
     }

@@ -18,7 +18,7 @@
                         <p>В нашей базе хранится более тысячи курсов от разных компаний</p>
                     </div>
 
-                    <img src="books-g1ecf9eb61_1920.jpg" width="500" height="350" />
+                    <img src="~/photosCourses/lib1.jpeg" width="500" height="350" />
                 </div>
 
                 <div class="row reversed-row">
@@ -29,7 +29,7 @@
                         <p>В нашей базе хранится более тысячи курсов от разных компаний</p>
                     </div>
 
-                    <img src="books-g1ecf9eb61_1920.jpg" width="500" height="350" />
+                    <img src="~/photosCourses/lib3.jpeg" width="500" height="350" />
                 </div>
 
                 <div class="row">
@@ -40,32 +40,23 @@
                         <p>В нашей базе хранится более тысячи курсов от разных компаний</p>
                     </div>
 
-                    <img src="books-g1ecf9eb61_1920.jpg" width="500" height="350" />
+                    <img src="~/photosCourses/lib2.jpeg" width="500" height="350" />
                 </div>
             </div>
-
-            <h1 class="second_title">Типы курсов на нашем сайте</h1>
-
-            <div class="types_of_course">
-
-            </div>
-
 
 
             <h1 class="second_title">Попробуйте прямо сейчас!</h1>
 
             <div class="buttons_container">
 
-                <button class="button">
+                <a class="button" asp-area="" asp-page="/RegPage">
                     Зарегистрироваться
-                </button>
-
-                  <tr><td>@Model.user.login</td><td>@Model.user.age</td></tr>
+                </a>
                 
 
-                <button class="button">
+                <a class="button" asp-area="" asp-page="/LoginPage">
                     Войти
-                </button>
+                </a>
             </div>
         </div>
     </div>

@@ -1,0 +1,93 @@
+﻿.content-container {
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #dee8ec;
+    padding: 25px 20px;
+    min-width: 600px;
+    max-width: 1020px;
+    width: 100%;
+    max-height: 100%;
+}
+
+.upload-poster {
+    margin-top: 15px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.inside-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.label-name {
+}
+
+.main-input {
+    display: flex;
+    margin-top: 7px;
+    min-width: 250px;
+    max-width: 400px;
+    padding: 6px 8px;
+    border-radius: 25px;
+}
+
+.main-label {
+    font-size: 25px;
+}
+
+.description-label {
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+.description-input {
+    display: flex;
+    min-width: 500px;
+    max-width: 600px;
+    min-height: 50px;
+    max-height: 100px;
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+.lesson-generator {
+}
+
+.btn-add-new-lesson {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    width: 150px
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-add-new-lesson {
+    font-size: 14px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #93b0d0;
+}
+
+.create-course {
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #93b0d0;
+}

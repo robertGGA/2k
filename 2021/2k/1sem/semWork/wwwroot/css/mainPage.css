@@ -61,7 +61,7 @@ a:hover {
 
 .main {
     background-color: #eacc97;
-    width: 100%;
+    min-height: 800px;
 }
 
 .main_wrapper {

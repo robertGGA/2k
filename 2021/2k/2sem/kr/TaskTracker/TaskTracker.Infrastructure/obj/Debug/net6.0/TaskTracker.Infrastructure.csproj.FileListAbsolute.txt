@@ -1,0 +1,17 @@
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/bin/Debug/net6.0/TaskTracker.Infrastructure.deps.json
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/bin/Debug/net6.0/TaskTracker.Infrastructure.runtimeconfig.json
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/bin/Debug/net6.0/TaskTracker.Infrastructure.dll
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/bin/Debug/net6.0/TaskTracker.Infrastructure.pdb
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/bin/Debug/net6.0/TaskTracker.Core.dll
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/bin/Debug/net6.0/TaskTracker.Core.pdb
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/TaskTracker.Infrastructure.csproj.AssemblyReference.cache
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/TaskTracker.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/TaskTracker.Infrastructure.AssemblyInfoInputs.cache
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/TaskTracker.Infrastructure.AssemblyInfo.cs
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/TaskTracker.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/TaskTracker.Infrastructure.csproj.CopyComplete
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/TaskTracker.Infrastructure.dll
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/refint/TaskTracker.Infrastructure.dll
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/TaskTracker.Infrastructure.pdb
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/TaskTracker.Infrastructure.genruntimeconfig.cache
+/Users/gadelshinrr/Downloads/TaskTracker/TaskTracker.Infrastructure/obj/Debug/net6.0/ref/TaskTracker.Infrastructure.dll

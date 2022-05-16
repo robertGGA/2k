@@ -12,5 +12,12 @@ namespace semWork.Models
         public string description { get; set; }
         public string page { get; set; }
         public List<SubLessons> sublessons { get; set; }
+
+        public Lessons() { }
+
+        public Lessons(string lesson)
+        {
+            this.page = lesson;
+        }
     }
 }

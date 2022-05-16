@@ -40,28 +40,18 @@ namespace semWork.Pages
 
         public IActionResult OnPostCreateUser()
         {
-            if (ModelState.IsValid) {
 
-                if (ConfPassword != Password)
-                {
-
-                } else
-                {
                     var pass = BC.HashPassword(Password);
 
                     var confPass = BC.HashPassword(ConfPassword);
 
                     Console.WriteLine(pass + " " + confPass);
-                    User.login = Login;
-                    User.password = pass;
-                    User.age = date;
-                    _db.Add(User);
-                    return Redirect("/RegPage");
-                }
-                Console.WriteLine(Login + " " + Password + " " + date);
-                return Redirect("/Index");
-            }
-            return Page();
+                    User user = new User();
+                    user.login = Login;
+                    user.password = pass;
+                    user.age = date;
+                    _db.Add(user);
+                    return Redirect("/LoginPage");
      
         }
     }

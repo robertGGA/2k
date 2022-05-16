@@ -30,10 +30,6 @@
                                     @course.name
                                 </h2>
 
-                                <div class="rate">
-                                    Балл курса:
-                                </div>
-
 
                                 <p class="description_course">
                                     @course.description
@@ -59,7 +55,8 @@
                 event.preventDefault();
                 let searchValue = $("#searcher").val().toLowerCase();
 
-                 $(".course_list").each(function () {
+                $(".course").each(function () {
+                    console.log($(this).text());
                     let stringData = $(this).text().toLowerCase();
                     if (stringData.indexOf(searchValue) === -1) {
                         $(this).hide();

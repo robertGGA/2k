@@ -5,12 +5,12 @@
     <h1>Страница курса</h1>
     <div class="course_container">
         <div class="course_info">
-            <div class="course_cover">
-            </div>
+            <img src="@Model.photo" class="course_cover"/>
+            
             <div class="course_text_info">
                 <div>
                     <div class="course_first_row">
-                        <h2>@Model.courseName</h2>
+                        <h2 style="margin-right: 35%;">@Model.courseName</h2>
 
                         @*<button id="toFav" class="button_like">
             <?xml version="1.0" ?>
@@ -26,9 +26,22 @@
         </button>*@
 
                         <button id="toFav" class="heart-like-button"></button>
+
+                        <div class="rating-area">
+                            <input type="radio" id="star-5" name="rating" value="5" />
+                            <label for="star-5" title="Оценка «5»"></label>
+                            <input type="radio" id="star-4" name="rating" value="4" />
+                            <label for="star-4" title="Оценка «4»"></label>
+                            <input type="radio" id="star-3" name="rating" value="3" />
+                            <label for="star-3" title="Оценка «3»"></label>
+                            <input type="radio" id="star-2" name="rating" value="2" />
+                            <label for="star-2" title="Оценка «2»"></label>
+                            <input type="radio" id="star-1" name="rating" value="1" />
+                            <label for="star-1" title="Оценка «1»"></label>
+                        </div>
                     </div>
 
-                    <p class="p_info">Оценка:</p>
+                    <p class="p_info">Средняя оценка: @Model.avgRate</p>
 
                     <h3 class="subtitle_course">@Model.description</h3>
                 </div>
@@ -70,6 +83,33 @@
                     </div>
                 </li>`;
             $('#comment-list').append(item);
+        });
+    });
+
+    var stars = document.querySelectorAll('#star-1, #star-2, #star-3, #star-4, #star-5');
+
+    stars.forEach(function (star) {
+        star.addEventListener("click", () => {
+            const data = {
+                Rate: star.value,
+                Course: @(Model.CourseId)
+            }
+
+
+
+            $.ajax({
+                type: "POST",
+                url: '/Course/@(Model.CourseId)?handler=SetRate',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8"
+            }).done(function () {
+
+            });
         });
     });
 
@@ -116,21 +156,19 @@
             };
 
             event.preventDefault();
-                $.ajax({
-                    type: "POST",
-                    url: '/Course/@(Model.CourseId)?handler=AddFavCourse',
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("XSRF-TOKEN",
-                            $('input:hidden[name="__RequestVerificationToken"]').val());
-                    },
-                    data: JSON.stringify(data),
-                    dataType: "json",
-                    contentType: "application/json; charset=utf-8"
-                }).done((comment) => {
-                    
-                }).error(() => {
-                    alert("error");
-                });
+            $.ajax({
+                type: "POST",
+                url: '/Course/@(Model.CourseId)?handler=AddFavCourse',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8"
+            }).done((comment) => {
+
+            });
         })
     });
 

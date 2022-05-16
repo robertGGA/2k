@@ -38,11 +38,12 @@ namespace semWork
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IFavouriteCourses, FavouriteCourse>();
             services.AddScoped<ILessonRepository, LessonRepository>();
+            services.AddScoped<IRateRepository, RateRepository>();
 
             services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
 
             services.AddSession(options => {
-                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.IdleTimeout = TimeSpan.FromMinutes(1000);
             });
 
             services.Configure<IISServerOptions>(options =>
