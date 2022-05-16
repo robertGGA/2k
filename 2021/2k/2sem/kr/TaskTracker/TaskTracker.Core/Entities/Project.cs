@@ -86,6 +86,11 @@ namespace TaskTracker.Core.Entities
                 throw new ArgumentException("The project does not contain a task with the given id");
             TasksItems.Remove(task);            
             return task;
-        }        
+        }
+        
+        public override string ToString()
+        {
+            return Id + " " + Name + " " + Description + " - Task";
+        }
     }
 }

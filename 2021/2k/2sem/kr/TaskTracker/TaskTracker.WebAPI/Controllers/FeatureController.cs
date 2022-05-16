@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using TaskTracker.Core.Entities;
+using TaskTracker.Core.Middlewares;
 using TaskTracker.Core.Repositories;
 using TaskTracker.WebAPI.APIModels;
 using TaskTracker.WebAPI.APIModels.FeatureModel;
 using TaskTracker.WebAPI.APIModels.ProjectAPIModels;
+using ILogger = Microsoft.Build.Framework.ILogger;
 
 namespace TaskTracker.WebAPI.Controllers;
 
@@ -14,6 +16,14 @@ public class FeatureController : ControllerBase
 {
 
     private readonly FeatureRepository _featureRepository;
+    private readonly LoggerMiddleware _loggerMiddleware;
+
+
+    public FeatureController(FeatureRepository featureRepository, LoggerMiddleware loggerMiddleware)
+    {
+        _loggerMiddleware = loggerMiddleware;
+        _featureRepository = featureRepository;
+    }
 
     public ActionResult<FeatureAPIModel> GetById(int featureID)
     {
@@ -24,6 +34,7 @@ public class FeatureController : ControllerBase
                 return NotFound();
 
             var result = FeatureAPIModel.FromFeature(feature);
+            _loggerMiddleware.LogFile(feature.ToString());
 
             return Ok(result);
         }
@@ -38,12 +49,12 @@ public class FeatureController : ControllerBase
     {
         try
         {
-            var project = new Feature(model.Name);
+            var feature = new Feature(model.Name);
 
-            project.Description = model.Description;
-            _featureRepository.Add(project);
-
-            return CreatedAtAction(nameof(GetById), new { projectId = project.Id }, model);
+            feature.Description = model.Description;
+            _featureRepository.Add(feature);
+            _loggerMiddleware.LogFile(feature.ToString());
+            return CreatedAtAction(nameof(GetById), new { projectId = feature.Id }, model);
         }
         catch (Exception ex)
         {
@@ -61,7 +72,7 @@ public class FeatureController : ControllerBase
                 return NotFound();
 
             _featureRepository.Delete(featureId);
-
+            _loggerMiddleware.LogFile(feature.ToString());
             return Ok();
         }
         catch (Exception ex)

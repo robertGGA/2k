@@ -4,6 +4,7 @@ using TaskTracker.WebAPI.APIModels;
 using TaskTracker.WebAPI.APIModels.ProjectAPIModels;
 using TaskTracker.WebAPI.APIModels.TaskItemAPIModels;
 using Microsoft.AspNetCore.Mvc;
+using TaskTracker.Core.Middlewares;
 
 namespace TaskTracker.WebAPI.Controllers
 {
@@ -12,10 +13,12 @@ namespace TaskTracker.WebAPI.Controllers
     public class ProjectController : ControllerBase
     {
         private readonly IProjectRepository _projectRepository;
+        private readonly LoggerMiddleware _loggerMiddleware;
 
-        public ProjectController(IProjectRepository projectRepository)
+        public ProjectController(IProjectRepository projectRepository, LoggerMiddleware loggerMiddleware)
         {
             _projectRepository = projectRepository;
+            _loggerMiddleware = loggerMiddleware;
         }        
 
         [HttpGet("{projectId:int}")]
@@ -28,7 +31,8 @@ namespace TaskTracker.WebAPI.Controllers
                     return NotFound();
 
                 var result = ProjectAPIModel.FromProject(project);                
-
+                
+                _loggerMiddleware.LogFile(project.ToString());
                 return Ok(result);
             }
             catch (Exception ex)
@@ -48,7 +52,6 @@ namespace TaskTracker.WebAPI.Controllers
                     projects
                         .Select(p => ListProjectAPIModel.FromProject(p))
                         .ToList();
-
                 return Ok(result);
             }
             catch (Exception ex)
@@ -70,7 +73,8 @@ namespace TaskTracker.WebAPI.Controllers
                 project.SetCompletionDate(model.CompletionDate);
 
                 _projectRepository.Add(project);
-
+                
+                _loggerMiddleware.LogFile(project.ToString());
                 return CreatedAtAction(nameof(GetById), new { projectId = project.Id }, model);
             }
             catch (Exception ex)
@@ -96,7 +100,8 @@ namespace TaskTracker.WebAPI.Controllers
                 project.Priority = model.Priority;
 
                 _projectRepository.Update(project);
-
+                
+                _loggerMiddleware.LogFile(project.ToString());
                 return Ok(ProjectAPIModel.FromProject(project));
             }
             catch (Exception ex)
@@ -115,7 +120,8 @@ namespace TaskTracker.WebAPI.Controllers
                     return NotFound();
 
                 _projectRepository.Delete(projectId);
-
+                
+                _loggerMiddleware.LogFile(project.ToString());
                 return Ok();
             }
             catch (Exception ex)

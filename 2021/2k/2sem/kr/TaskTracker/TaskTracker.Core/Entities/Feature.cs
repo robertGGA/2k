@@ -10,5 +10,10 @@ public class Feature
     
     public Boolean? isDeleted { get; set; }
     
-    public Feature(string name) { Name = name; }     
+    public Feature(string name) { Name = name; }
+
+    public override string ToString()
+    {
+        return Id + " " + Name + " " + Description + " - Feature";
+    }
 }

@@ -4,6 +4,7 @@ using TaskTracker.WebAPI.APIModels;
 using TaskTracker.WebAPI.APIModels.ProjectAPIModels;
 using TaskTracker.WebAPI.APIModels.TaskItemAPIModels;
 using Microsoft.AspNetCore.Mvc;
+using TaskTracker.Core.Middlewares;
 
 namespace TaskTracker.WebAPI.Controllers
 {
@@ -13,13 +14,16 @@ namespace TaskTracker.WebAPI.Controllers
     {
         private readonly IProjectRepository _projectRepository;
         private readonly ITaskItemRepository _taskItemRepository;
+        private readonly LoggerMiddleware _loggerMiddleware;
 
         public TaskItemController(
             IProjectRepository projectRepository,
-            ITaskItemRepository taskItemRepository)
+            ITaskItemRepository taskItemRepository,
+            LoggerMiddleware loggerMiddleware)
         {
             _projectRepository = projectRepository;
             _taskItemRepository = taskItemRepository;
+            _loggerMiddleware = loggerMiddleware;
         }
 
         [HttpGet("{projectId:int}/tasks/{taskItemId:int}")]
@@ -56,7 +60,7 @@ namespace TaskTracker.WebAPI.Controllers
                     project.TasksItems
                         .Select(t => TaskItemAPIModel.FromTaskItem(t))
                         .ToList();
-
+            
                 return Ok(result);
             }
             catch (Exception ex)
@@ -82,6 +86,8 @@ namespace TaskTracker.WebAPI.Controllers
                 task.Priority = model.Priority;
                 project.AddTask(task);
                 _taskItemRepository.Add(task);
+                
+                _loggerMiddleware.LogFile(task.ToString());
 
                 return CreatedAtAction(nameof(GetById), new { projectId = projectId, taskItemId = task.Id }, model);
             }
@@ -112,6 +118,7 @@ namespace TaskTracker.WebAPI.Controllers
                 task.Priority = model.Priority;
 
                 _taskItemRepository.Update(task);
+                _loggerMiddleware.LogFile(task.ToString());
 
                 return Ok(TaskItemAPIModel.FromTaskItem(task));
             }
@@ -135,6 +142,7 @@ namespace TaskTracker.WebAPI.Controllers
                     return NotFound();
 
                 _taskItemRepository.Delete(taskItemId);
+                _loggerMiddleware.LogFile(task.ToString());
 
                 return Ok();
             }

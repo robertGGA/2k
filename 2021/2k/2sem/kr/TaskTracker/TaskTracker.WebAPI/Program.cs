@@ -1,9 +1,19 @@
+using System.Diagnostics;
 using TaskTracker.Core.Interfaces;
 using TaskTracker.Infrastructure;
 using TaskTracker.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using TaskTracker.Core.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddConsole();
+});
+
+
 
 // Add services to the container.
 
@@ -14,6 +24,7 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("ApplicationDbContext")));
 
@@ -21,6 +32,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<ITaskItemRepository, TaskItemRepository>();
+builder.Services.AddSingleton<LoggerMiddleware>();
 
 var app = builder.Build();
 
@@ -35,6 +47,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+
+
 app.MapControllers();
 
 app.Run();
+

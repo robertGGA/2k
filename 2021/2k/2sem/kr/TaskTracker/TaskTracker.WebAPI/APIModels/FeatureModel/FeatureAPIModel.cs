@@ -4,7 +4,7 @@ namespace TaskTracker.WebAPI.APIModels.FeatureModel;
 
 public class FeatureAPIModel: UpdateFeatureAPIModel
 {
-    
+
     public FeatureAPIModel(int id, string name) : base(name, id) { }
     public string Name { get; set; }
     public string? Description { get; set; }
@@ -20,4 +20,5 @@ public class FeatureAPIModel: UpdateFeatureAPIModel
         };
         return model;
     }
+    
 }

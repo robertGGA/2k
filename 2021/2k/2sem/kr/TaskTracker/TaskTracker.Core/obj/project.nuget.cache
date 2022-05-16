@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "c5c6/j4hw3OsMRfUz0ZlBufHnUDoOnmPc8jHhGx/2iGRDIPP2re0waBXsM6mCHUz6diqfeoUFiBZKEt5j6/Wsg==",
+  "dgSpecHash": "VASCR0NgWTuVESBE92RPnQtLvPwTu6ov/mBaqaYfy60y5UNe7BS0t9WJkHXNM3dvZ+VXvtI4aFxUWvZvdXs5Yw==",
   "success": true,
   "projectFilePath": "/Users/gadelshinrr/Desktop/2kGit/2k/2021/2k/2sem/kr/TaskTracker/TaskTracker.Core/TaskTracker.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/gadelshinrr/.nuget/packages/microsoft.build.framework/17.0.0/microsoft.build.framework.17.0.0.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/system.security.accesscontrol/4.7.0/system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/system.security.permissions/4.7.0/system.security.permissions.4.7.0.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
+    "/Users/gadelshinrr/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

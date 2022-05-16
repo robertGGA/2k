@@ -50,5 +50,10 @@ namespace TaskTracker.Core.Entities
             else
                 throw new ArgumentOutOfRangeException("Task's completion date has to be later than its start date");
         }
+        
+        public override string ToString()
+        {
+            return Id + " " + Name + " " + Description + " - Project" ;
+        }
     }
 }
